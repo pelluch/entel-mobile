@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Entel">
+        <wb-resource deploy-path="/" source-path="/apps/Entel/common"/>
+        <wb-resource deploy-path="/" source-path="/apps/Entel/android"/>
+        <wb-resource deploy-path="/" source-path="/apps/Entel/desktopbrowser"/>
+        <wb-resource deploy-path="/" source-path="/apps/Entel/iphone"/>
+        <property name="context-root" value="Entel"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,10 @@
+apps/*/*/native/bin
+apps/*/*/native/gen
+apps/*/*/native/cordova
+apps/*/*/native/CordovaLib
+apps/*/*/native/assets/www
+apps/*/blackberry/native/www
+apps/*/blackberry10/native/www
+apps/*/blackberry10/native/build
+bin
+out
