@@ -46,12 +46,16 @@ function getUsers() {
 	return WL.Server.invokeHttp(input);
 }
 
-function addUser(param1) {
+function addUser(user) {
 	
 	var input = {
 	    method : 'post',
 	    returnedContentType : 'json',
-	    path : 'userInputRequired'
+	    path : 'users',
+	    body: {
+	    	contentType : 'application/json; charset=utf-8',
+	    	content: user
+	    }
 	};
 	
 	

@@ -4,6 +4,7 @@
         <wb-resource deploy-path="/" source-path="/apps/Entel/android"/>
         <wb-resource deploy-path="/" source-path="/apps/Entel/desktopbrowser"/>
         <wb-resource deploy-path="/" source-path="/apps/Entel/iphone"/>
+        <wb-resource deploy-path="/" source-path="/apps/Entel/mobilewebapp"/>
         <property name="context-root" value="Entel"/>
     </wb-module>
 </project-modules>
