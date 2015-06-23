@@ -37,19 +37,32 @@
 
 
 function addUser(user) {
-	
+
 	var input = {
-	    method : 'post',
-	    returnedContentType : 'json',
-	    path : 'users',
-	    body: {
-	    	contentType : 'application/json; charset=utf-8',
-	    	content: user
-	    }
+			method : 'post',
+			returnedContentType : 'json',
+			path : 'users',
+			body: {
+				contentType : 'application/json; charset=utf-8',
+				content: user
+			}
 	};
-	
-	
+
+
 	return WL.Server.invokeHttp(input);
 }
 
+function login(loginInfo) {
+	var input = {
+			method : 'post',
+			returnedContentType : 'json',
+			path : 'access_tokens',
+			body: {
+				contentType : 'application/json; charset=utf-8',
+				content: loginInfo
+			}
+	};
+
+	return WL.Server.invokeHttp(input);
+}
 

@@ -25,6 +25,7 @@
 
 	
 	<procedure name="addUser"> </procedure>
+	<procedure name="login"> </procedure>
 	
 
 	
