@@ -34,22 +34,17 @@
  * 
  * @returns json list of items
  */
-
-
-function addUser(user) {
-	
+function getPlanTypes() {
+		
 	var input = {
-	    method : 'post',
+	    method : 'get',
 	    returnedContentType : 'json',
-	    path : 'users',
-	    body: {
-	    	contentType : 'application/json; charset=utf-8',
-	    	content: user
-	    }
+	    path : 'plan_types'
 	};
 	
 	
 	return WL.Server.invokeHttp(input);
 }
+
 
 

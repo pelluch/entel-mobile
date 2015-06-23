@@ -5,13 +5,13 @@
     US Government Users Restricted Rights - Use, duplication or
     disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
 -->
-<wl:adapter name="user"
+<wl:adapter name="plan_type"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:wl="http://www.ibm.com/mfp/integration"
 	xmlns:http="http://www.ibm.com/mfp/integration/http">
 
-	<displayName>user</displayName>
-	<description>user</description>
+	<displayName>plan_type</displayName>
+	<description>plan_type</description>
 	<connectivity>
 		<connectionPolicy xsi:type="http:HTTPConnectionPolicyType">
 			<protocol>http</protocol>
@@ -23,8 +23,9 @@
 		</connectionPolicy>
 	</connectivity>
 
+
+	<procedure name="getPlanTypes"> </procedure>
 	
-	<procedure name="addUser"> </procedure>
 	
 
 	

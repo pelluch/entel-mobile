@@ -34,22 +34,17 @@
  * 
  * @returns json list of items
  */
-
-
-function addUser(user) {
-	
+function getDailyTraffics(userId) {
+		
 	var input = {
-	    method : 'post',
+	    method : 'get',
 	    returnedContentType : 'json',
-	    path : 'users',
-	    body: {
-	    	contentType : 'application/json; charset=utf-8',
-	    	content: user
-	    }
+	    path : 'users/' + userId + '/daily_traffics'
 	};
 	
 	
 	return WL.Server.invokeHttp(input);
 }
+
 
 
