@@ -1,135 +1,147 @@
-<!DOCTYPE HTML>
+	<!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Entel</title>
-<meta name="viewport"
+	<meta charset="UTF-8">
+	<title>Entel</title>
+	<meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
 <!--
     			<link rel="shortcut icon" href="images/favicon.png">
     			<link rel="apple-touch-icon" href="images/apple-touch-icon.png"> 
     		-->
-<link href="jqueryMobile/jquery.mobile-1.4.5.css" rel="stylesheet">
-<link rel="stylesheet" href="slideMenu/css/themes/jqmfb.min.css" />
-<link rel="stylesheet" href="css/main.css">
-<script>
-	window.$ = window.jQuery = WLJQ;
-</script>
-<!--JQM globals you can edit or remove file entirely... note it needs to be loaded before jquerymobile js -->
-<script src="slideMenu/js/jqm.globals.js"></script>
-<script src="slideMenu/js/jquery.animate-enhanced.min.js"></script>
-<script src="jqueryMobile/jquery.mobile-1.4.5.js"></script>
-<link rel="stylesheet" href="slideMenu/css/jqm.slidemenu.css" />
-<script src="slideMenu/js/jqm.slidemenu.js"></script>
+    		<link href="jqueryMobile/jquery.mobile-1.4.5.css" rel="stylesheet">
+    		<link rel="stylesheet" href="css/main.css">
+    		<link rel="stylesheet"
+    		href="font-awesome-4.3.0/css/font-awesome.min.css" />
+    		
 
-</head>
-<body style="display: none;">
+    		<script>
+    			window.$ = window.jQuery = WLJQ;
+    		</script>
+    		<script src="jqueryMobile/jquery.mobile-1.4.5.js"></script>
+    		
+    		<script src="js/lib/underscore-min.js"></script>
+    		<script src="js/lib/backbone-min.js"></script>
 
-	<script src="js/initOptions.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/messages.js"></script>
-	<script src="js/login.js"></script>
+            <script src="js/sync/plan_type.js"></script>
+            <script src="js/models/plan_type.js"></script>
+            <script src="js/models/plan_type_collection.js"></script>
+            <script src="js/views/plan_type_view.js"></script>
+            <script src="js/views/plan_type_list_view.js"></script>
+    		
 
-	<div id="slidemenu">
+    	</head>
+    	<body style="display: none;">
 
-		<div id="profile">
-				<img src="images/logo.png">
-		</div>
+    	<!-- <nav id="menu" class="mm-menu mm-border-none mm-theme-white mm-offcanvas mm-current mm-opened">
+    			<div class="mm-panel mm-opened mm-current" id="mm-0">
+    				<div class="logoContainer">
+    					<img src="images/logo.png" class="logo">
+    				</div>
+    				<ul class="mm-listview">
+    					<li><a href="#/"><i class="fa fa-user"></i><span class="menuItem">Login</span></a></li>
+    					<li><a href="#/about"><i class="fa fa-mobile-phone"></i><span class="menuItem">Planes y Tarifas</span></a></li>
+    					<li><a href="#/contact"><i class="fa fa-file-text-o"></i><span class="menuItem">Mi plan</span></a></li>
+    					<li><a href="#/about"><i class="fa fa-map-marker"></i><span class="menuItem">Tiendas</span></a></li>
+    				</ul>
+    			</div>
+    		</nav> -->
+
+    		<script src="js/initOptions.js"></script>
+    		<script src="js/main.js"></script>
+    		<script src="js/messages.js"></script>
+    		<script src="js/pages/login.js"></script>
+    		<script src="js/pages/plans.js"></script>
 
 
-		<ul>
-			<li><a href="#main_page">Home</a></li>
-			<li><a href="#another_page">Tegan
-					Snyder</a></li>
-			<li><a href="#another_page2">Invite
-					Friends</a></li>
-			<li><a href="#another_page3">Settings</a></li>
-			<li><a href="test.html" rel="external">Help</a></li>
-		</ul>
 
-	
+    		<div data-role="page" id="login">
 
-	</div>
+    			<div data-role="header" data-position="fixed" data-tap-toggle="false"
+    			data-update-page-padding="false">
+    			<a href="#menu" data-slidemenu="#slidemenu" data-slideopen="false"
+    			class="menu-btn"><i class="fa fa-bars"></i></a>
+    			<h1>Entel</h1>
+    		</div>
 
-	<div data-role="page" id="login">
+    		<div data-role="content"
+    		style="padding-top: 50px; padding-bottom: 15px;">
+    		<form id="login_form" data-ajax="false">
+    			<label for="login_phone_number">Teléfono: </label> <input
+    			type="text" name="login_phone_number" id="login_phone_number">
 
-		<div data-role="header" data-position="fixed" data-tap-toggle="false"
-			data-update-page-padding="false">
-			<a href="#" data-slidemenu="#slidemenu" data-slideopen="false"
-				data-icon="smico" data-corners="false" data-iconpos="notext">Menu</a>
-			<h1>Entel</h1>
-		</div>
+    			<label for="login_rut">Rut: </label> <input type="text"
+    			name="login_rut" id="login_rut"> <label
+    			for="login_password">Clave: </label> <input type="password"
+    			name="login_password" id="login_password">
 
-		<div data-role="content" style="padding-top: 50px; padding-bottom: 15px;">
-			<form id="login_form" data-ajax="false">
-				<label for="login_phone_number">Teléfono: </label> <input
-					type="text" name="login_phone_number" id="login_phone_number">
+    			<button id="submit" type="submit" class="btn-primary" data-role="button" data-theme="b">Login</button>
+    		</form>
+    		<div class="ui-grid-a">
+    			<div class="ui-block-a">
+    				<a href="#reset_password" data-role="button" data-mini="true">Forgot
+    					password</a>
+    				</div>
+    				<div class="ui-block-b">
+    					<a href="#register" data-role="button" data-mini="true">Create
+    						account</a>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    		<div data-role="page" id="reset_password">
+    			<div data-role="content" style="padding: 15px">
+    				<form id="reset_password_form" action="">
+    					<label for="login_email">e-mail address: </label> <input type="text"
+    					name="login_email" id="login_email">
+    					<button type="submit" data-role="button" data-theme="b">Reset
+    						Password</button>
+    					</form>
+    				</div>
+    			</div>
+    			<div data-role="page" id="register">
+    				<div data-role="content">
+    					<form id="register_form" action="">
+    						<label for="register_email">e-mail address: </label> <input
+    						type="text" name="register_email" id="register_email"> <label
+    						for="register_first_name">First name: </label> <input type="text"
+    						name="register_first_name" id="register_first_name"> <label
+    						for="register_last_name">Last name: </label> <input type="text"
+    						name="register_last_name" id="register_last_name"> <label
+    						for="register_password">Password:</label> <input type="password"
+    						name="register_password" id="register_password"> <label
+    						for="register_repeat_password">Repeat password:</label> <input
+    						type="password" name="register_repeat_password"
+    						id="register_repeat_password">
+    						<div class="ui-grid-a">
+    							<div class="ui-block-a">
+    								<button type="submit" data-role="button" data-theme="b">Register</button>
+    							</div>
+    							<div class="ui-block-b">
+    								<button type="reset" data-role="button">Cancel</button>
+    							</div>
+    						</div>
+    					</form>
 
-				<label for="login_rut">Rut: </label> <input type="text"
-					name="login_rut" id="login_rut"> <label
-					for="login_password">Clave: </label> <input type="password"
-					name="login_password" id="login_password">
+    				</div>
+    			</div>
+    			<div data-role="page" id="plans">
 
-				<button id="submit" type="submit" data-role="button" data-theme="b">Login</button>
-			</form>
-			<div class="ui-grid-a">
-				<div class="ui-block-a">
-					<a href="#reset_password" data-role="button" data-mini="true">Forgot
-						password</a>
-				</div>
-				<div class="ui-block-b">
-					<a href="#register" data-role="button" data-mini="true">Create
-						account</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div data-role="page" id="reset_password">
-		<div data-role="content" style="padding: 15px">
-			<form id="reset_password_form" action="">
-				<label for="login_email">e-mail address: </label> <input type="text"
-					name="login_email" id="login_email">
-				<button type="submit" data-role="button" data-theme="b">Reset
-					Password</button>
-			</form>
-		</div>
-	</div>
-	<div data-role="page" id="register">
-		<div data-role="content">
-			<form id="register_form" action="">
-				<label for="register_email">e-mail address: </label> <input
-					type="text" name="register_email" id="register_email"> <label
-					for="register_first_name">First name: </label> <input type="text"
-					name="register_first_name" id="register_first_name"> <label
-					for="register_last_name">Last name: </label> <input type="text"
-					name="register_last_name" id="register_last_name"> <label
-					for="register_password">Password:</label> <input type="password"
-					name="register_password" id="register_password"> <label
-					for="register_repeat_password">Repeat password:</label> <input
-					type="password" name="register_repeat_password"
-					id="register_repeat_password">
-				<div class="ui-grid-a">
-					<div class="ui-block-a">
-						<button type="submit" data-role="button" data-theme="b">Register</button>
-					</div>
-					<div class="ui-block-b">
-						<button type="reset" data-role="button">Cancel</button>
-					</div>
-				</div>
-			</form>
+    				<div data-role="header" data-position="fixed" data-tap-toggle="false"
+    				data-update-page-padding="false">
+    				<a href="#" data-slidemenu="#slidemenu" data-slideopen="false"
+    				class="menu-btn"><i class="fa fa-bars"></i></a>
+    				<h1>Entel</h1>
+    			</div>
 
-		</div>
-	</div>
-	<div data-role="page" id="plans">
-		<div data-role="content">
-			<ul data-role="listview">
-				<li data-role="list-divider">Planes Telefonía Móvil</li>
-				<li><a href="#">Item 1</a></li>
-				<li><a href="#">Item 2</a></li>
-				<li><a href="#">Item 3</a></li>
+    			<div data-role="content" style="padding-top: 50px; padding-bottom: 15px;">
+    				<ul id="planTypesList" data-role="listview">
+    					<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit ui-first-child ui-last-child">Planes Telefonía Móvil</li>
 
-			</ul>
-		</div>
-	</div>
-</body>
-</html>
+    				</ul>
+    			</div>
+    		</div>
+    		
+    		
+    	</body>
+    	</html>

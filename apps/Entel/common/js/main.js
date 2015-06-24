@@ -1,3 +1,6 @@
+
+var indicator = new WL.BusyIndicator();
+
 function wlCommonInit(){
 	/*
 	 * Use of WL.Client.connect() API before any connectivity to a MobileFirst Server is required. 

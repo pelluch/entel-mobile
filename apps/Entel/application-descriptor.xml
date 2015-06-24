@@ -14,13 +14,7 @@
     <mainFile>index.html</mainFile>
     <features/>
     <thumbnailImage>common/images/thumbnail.png</thumbnailImage>
-    <iphone bundleId="com.Entel" version="1.0">
-        <worklightSettings include="false"/>
-        <security>
-            <encryptWebResources enabled="false"/>
-            <testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3"/>
-        </security>
-    </iphone>
+    
     <userIdentityRealms/>
     <accessTokenExpiration>3600</accessTokenExpiration>
     <android version="1.0">

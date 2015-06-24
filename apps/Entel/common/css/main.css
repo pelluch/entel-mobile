@@ -3,3 +3,46 @@
 	 US Government Users Restricted Rights - Use, duplication or
      disclosure restricted by GSA ADP Schedule Contract with IBM Corp. */
      
+.menu-btn {
+	background-color: #0154a0 !important;
+	color: white !important;
+	border-style: none !important;
+}
+
+.mm-title, .mm-listview > li  {
+	color: black;
+}
+
+.mm-listview > li {
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.logoContainer {
+	width: 100%;
+	height: 50px;
+	text-align: center;
+}
+
+.logo {
+	height: 100%;
+}
+
+#menu .fa {
+	color: #0154a0;
+	font-size: 14pt;
+	width: 20px;
+}
+
+.menuItem {
+	padding-left: 14px;
+}
+
+.ui-header {
+	background-color: #0154a0 !important;
+	color: white !important;
+}
+
+.btn-primary {
+	background-color: #ff6702 !important;
+	border-style: none !important;
+}

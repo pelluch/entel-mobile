@@ -1,12 +1,48 @@
 CACHE MANIFEST
-# Created: 2015-06-23 01:03:38 UTC
+# Created: 2015-06-23 21:35:14 UTC
 # Modifying this file is possible only when the Cache Manifest value in the application descriptor is set to "Managed by user"
 css/main.css
 filelist
+font-awesome-4.3.0/css/font-awesome.css
+font-awesome-4.3.0/css/font-awesome.min.css
+font-awesome-4.3.0/fonts/FontAwesome.otf
+font-awesome-4.3.0/fonts/fontawesome-webfont.eot
+font-awesome-4.3.0/fonts/fontawesome-webfont.svg
+font-awesome-4.3.0/fonts/fontawesome-webfont.ttf
+font-awesome-4.3.0/fonts/fontawesome-webfont.woff
+font-awesome-4.3.0/fonts/fontawesome-webfont.woff2
+font-awesome-4.3.0/less/animated.less
+font-awesome-4.3.0/less/bordered-pulled.less
+font-awesome-4.3.0/less/core.less
+font-awesome-4.3.0/less/fixed-width.less
+font-awesome-4.3.0/less/font-awesome.less
+font-awesome-4.3.0/less/icons.less
+font-awesome-4.3.0/less/larger.less
+font-awesome-4.3.0/less/list.less
+font-awesome-4.3.0/less/mixins.less
+font-awesome-4.3.0/less/path.less
+font-awesome-4.3.0/less/rotated-flipped.less
+font-awesome-4.3.0/less/stacked.less
+font-awesome-4.3.0/less/variables.less
+font-awesome-4.3.0/scss/_animated.scss
+font-awesome-4.3.0/scss/_bordered-pulled.scss
+font-awesome-4.3.0/scss/_core.scss
+font-awesome-4.3.0/scss/_fixed-width.scss
+font-awesome-4.3.0/scss/_icons.scss
+font-awesome-4.3.0/scss/_larger.scss
+font-awesome-4.3.0/scss/_list.scss
+font-awesome-4.3.0/scss/_mixins.scss
+font-awesome-4.3.0/scss/_path.scss
+font-awesome-4.3.0/scss/_rotated-flipped.scss
+font-awesome-4.3.0/scss/_stacked.scss
+font-awesome-4.3.0/scss/_variables.scss
+font-awesome-4.3.0/scss/font-awesome.scss
 images/icon.png
 images/icon114x114.png
 images/icon57x57.png
 images/icon72x72.png
+images/logo.png
+images/logo.png.orig
 images/thumbnail.png
 index.html
 jqueryMobile/images/ajax-loader.gif
@@ -213,8 +249,12 @@ jqueryMobile/images/icons-svg/video-white.svg
 jqueryMobile/jquery.mobile-1.4.5.css
 jqueryMobile/jquery.mobile-1.4.5.js
 js/initOptions.js
+js/lib/backbone-min.js
 js/main.js
 js/messages.js
+js/pages/login.js
+js/pages/plans.js
+js/pages/register.js
 worklight.manifest.bak
 worklight/messages/de/messages.json
 worklight/messages/es/messages.json
