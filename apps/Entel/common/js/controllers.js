@@ -70,6 +70,7 @@ angular.module('starter.controllers', [ 'starter.connectors' ])
     onSuccess: function(e) {
       $scope.planTypes = e.responseJSON.array;
       console.log($scope.planTypes);
+      $scope.$apply();
     },
     onFailure: function(e) {
 
