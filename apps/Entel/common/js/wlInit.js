@@ -1,31 +1,3 @@
-
-
-var indicator = new WL.BusyIndicator();
-
-function wlCommonInit(){
-    /*
-     * Use of WL.Client.connect() API before any connectivity to a MobileFirst Server is required. 
-     * This API should be called only once, before any other WL.Client methods that communicate with the MobileFirst Server.
-     * Don't forget to specify and implement onSuccess and onFailure callback functions for WL.Client.connect(), e.g:
-     *    
-     *    WL.Client.connect({
-     *          onSuccess: onConnectSuccess,
-     *          onFailure: onConnectFailure
-     *    });
-     *     
-     */
-     
-    // Common initialization code goes here
-        // Common initialization code goes here
-        var env = WL.Client.getEnvironment();
-        if(env === WL.Environment.IPHONE || env === WL.Environment.IPAD){
-            document.body.classList.add('platform-ios'); 
-        } else if(env === WL.Environment.ANDROID){
-            document.body.classList.add('platform-android'); 
-        }
-    }
-
-
 // Uncomment the initialization options as required. For advanced initialization options please refer to IBM MobileFirst Platform Foundation Knowledge Center 
 
 var wlInitOptions = {
@@ -57,3 +29,32 @@ if (window.addEventListener) {
 }
 
 
+
+var indicator = new WL.BusyIndicator();
+
+function wlCommonInit(){
+    /*
+     * Use of WL.Client.connect() API before any connectivity to a MobileFirst Server is required. 
+     * This API should be called only once, before any other WL.Client methods that communicate with the MobileFirst Server.
+     * Don't forget to specify and implement onSuccess and onFailure callback functions for WL.Client.connect(), e.g:
+     *    
+     *    WL.Client.connect({
+     *          onSuccess: onConnectSuccess,
+     *          onFailure: onConnectFailure
+     *    });
+     *     
+     */
+     
+    // Common initialization code goes here
+    var env = WL.Client.getEnvironment();
+    if(env === WL.Environment.IPHONE || env === WL.Environment.IPAD){
+        document.body.classList.add('platform-ios'); 
+    } else if(env === WL.Environment.ANDROID){
+        document.body.classList.add('platform-android'); 
+    }   
+
+    angular.element(document).ready(function() {
+        WL.App.hideSplashScreen();
+        angular.bootstrap(document, ['starter']);
+    });     
+}

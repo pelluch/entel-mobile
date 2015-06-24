@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Created: 2015-06-24 15:22:44 UTC
+# Created: 2015-06-24 16:24:26 UTC
 # Modifying this file is possible only when the Cache Manifest value in the application descriptor is set to "Managed by user"
 
 NETWORK:
@@ -9,6 +9,7 @@ filelist
 img/ionic.png
 index.html
 js/app.js
+js/controllers.js
 js/main.js
 js/wlInit.js
 lib/ionic/css/ionic.css
@@ -73,6 +74,12 @@ lib/ionic/scss/ionicons/_ionicons-icons.scss
 lib/ionic/scss/ionicons/_ionicons-variables.scss
 lib/ionic/scss/ionicons/ionicons.scss
 lib/ionic/version.json
+templates/browse.html
+templates/login.html
+templates/menu.html
+templates/playlist.html
+templates/playlists.html
+templates/search.html
 worklight.manifest.bak
 worklight/messages/de/messages.json
 worklight/messages/es/messages.json
