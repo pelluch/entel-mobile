@@ -1,6 +1,6 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', [ 'starter.connectors' ])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, UserConnector) {
   
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -32,7 +32,15 @@ angular.module('starter.controllers', [])
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
-
+    UserConnector.login($scope.loginData, {
+      onSuccess: function(e) {
+        console.log(e);
+      },
+      onFailure: function(e) {
+        console.log(e);
+      }
+    })
+    // console.log(UserConnector);
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
     $timeout(function() {
