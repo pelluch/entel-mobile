@@ -1,3 +1,4 @@
+
 angular.module('starter.controllers', [ 'starter.connectors' ])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, UserConnector) {
@@ -60,5 +61,21 @@ angular.module('starter.controllers', [ 'starter.connectors' ])
   ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('PlanTypeListCtrl', function($scope, $stateParams, PlanTypeConnector) {
+
+  $scope.planTypes = [ 
+  { id: 1, name: "sadasd" }
+  ];
+  PlanTypeConnector.getPlanTypes({
+    onSuccess: function(e) {
+      $scope.planTypes = e.responseJSON.array;
+      console.log($scope.planTypes);
+    },
+    onFailure: function(e) {
+
+    }
+  });
+})
+
+.controller('PlanTypeCtrl', function($scope, $stateParams) {
 });

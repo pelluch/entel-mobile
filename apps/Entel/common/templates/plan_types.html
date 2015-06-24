@@ -1,0 +1,9 @@
+<ion-view view-title="Planes">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="planType in planTypes" href="#/app/plan_types/{{planType.id}}">
+        {{planType.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

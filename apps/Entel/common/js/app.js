@@ -65,6 +65,25 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'PlaylistCtrl'
       }
     }
+  })
+
+  .state('app.plan_types', {
+    url: "/plan_types",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/plan_types.html",
+        controller: 'PlanTypeListCtrl'
+      }
+    }
+  })
+  .state('app.plan_type', {
+    url: "/plan_types/:planTypeId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/plan_type.html",
+        controller: 'PlanTypeCtrl'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
