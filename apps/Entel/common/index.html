@@ -1,147 +1,35 @@
-	<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Entel</title>
-	<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
-<!--
-    			<link rel="shortcut icon" href="images/favicon.png">
-    			<link rel="apple-touch-icon" href="images/apple-touch-icon.png"> 
-    		-->
-    		<link href="jqueryMobile/jquery.mobile-1.4.5.css" rel="stylesheet">
-    		<link rel="stylesheet" href="css/main.css">
-    		<link rel="stylesheet"
-    		href="font-awesome-4.3.0/css/font-awesome.min.css" />
-    		
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
 
-    		<script>
-    			window.$ = window.jQuery = WLJQ;
-    		</script>
-    		<script src="jqueryMobile/jquery.mobile-1.4.5.js"></script>
-    		
-    		<script src="js/lib/underscore-min.js"></script>
-    		<script src="js/lib/backbone-min.js"></script>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script>window.$ = window.jQuery = WLJQ;</script>
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
 
-            <script src="js/sync/plan_type.js"></script>
-            <script src="js/models/plan_type.js"></script>
-            <script src="js/models/plan_type_collection.js"></script>
-            <script src="js/views/plan_type_view.js"></script>
-            <script src="js/views/plan_type_list_view.js"></script>
-    		
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    	</head>
-    	<body style="display: none;">
+    <!-- cordova script (this will be a 404 during development) -->
+    <!-- <script src="cordova.js"></script> -->
 
-    	<!-- <nav id="menu" class="mm-menu mm-border-none mm-theme-white mm-offcanvas mm-current mm-opened">
-    			<div class="mm-panel mm-opened mm-current" id="mm-0">
-    				<div class="logoContainer">
-    					<img src="images/logo.png" class="logo">
-    				</div>
-    				<ul class="mm-listview">
-    					<li><a href="#/"><i class="fa fa-user"></i><span class="menuItem">Login</span></a></li>
-    					<li><a href="#/about"><i class="fa fa-mobile-phone"></i><span class="menuItem">Planes y Tarifas</span></a></li>
-    					<li><a href="#/contact"><i class="fa fa-file-text-o"></i><span class="menuItem">Mi plan</span></a></li>
-    					<li><a href="#/about"><i class="fa fa-map-marker"></i><span class="menuItem">Tiendas</span></a></li>
-    				</ul>
-    			</div>
-    		</nav> -->
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/wlInit.js"></script>
+  </head>
+  <body ng-app="starter">
 
-    		<script src="js/initOptions.js"></script>
-    		<script src="js/main.js"></script>
-    		<script src="js/messages.js"></script>
-    		<script src="js/pages/login.js"></script>
-    		<script src="js/pages/plans.js"></script>
-
-
-
-    		<div data-role="page" id="login">
-
-    			<div data-role="header" data-position="fixed" data-tap-toggle="false"
-    			data-update-page-padding="false">
-    			<a href="#menu" data-slidemenu="#slidemenu" data-slideopen="false"
-    			class="menu-btn"><i class="fa fa-bars"></i></a>
-    			<h1>Entel</h1>
-    		</div>
-
-    		<div data-role="content"
-    		style="padding-top: 50px; padding-bottom: 15px;">
-    		<form id="login_form" data-ajax="false">
-    			<label for="login_phone_number">Teléfono: </label> <input
-    			type="text" name="login_phone_number" id="login_phone_number">
-
-    			<label for="login_rut">Rut: </label> <input type="text"
-    			name="login_rut" id="login_rut"> <label
-    			for="login_password">Clave: </label> <input type="password"
-    			name="login_password" id="login_password">
-
-    			<button id="submit" type="submit" class="btn-primary" data-role="button" data-theme="b">Login</button>
-    		</form>
-    		<div class="ui-grid-a">
-    			<div class="ui-block-a">
-    				<a href="#reset_password" data-role="button" data-mini="true">Forgot
-    					password</a>
-    				</div>
-    				<div class="ui-block-b">
-    					<a href="#register" data-role="button" data-mini="true">Create
-    						account</a>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    		<div data-role="page" id="reset_password">
-    			<div data-role="content" style="padding: 15px">
-    				<form id="reset_password_form" action="">
-    					<label for="login_email">e-mail address: </label> <input type="text"
-    					name="login_email" id="login_email">
-    					<button type="submit" data-role="button" data-theme="b">Reset
-    						Password</button>
-    					</form>
-    				</div>
-    			</div>
-    			<div data-role="page" id="register">
-    				<div data-role="content">
-    					<form id="register_form" action="">
-    						<label for="register_email">e-mail address: </label> <input
-    						type="text" name="register_email" id="register_email"> <label
-    						for="register_first_name">First name: </label> <input type="text"
-    						name="register_first_name" id="register_first_name"> <label
-    						for="register_last_name">Last name: </label> <input type="text"
-    						name="register_last_name" id="register_last_name"> <label
-    						for="register_password">Password:</label> <input type="password"
-    						name="register_password" id="register_password"> <label
-    						for="register_repeat_password">Repeat password:</label> <input
-    						type="password" name="register_repeat_password"
-    						id="register_repeat_password">
-    						<div class="ui-grid-a">
-    							<div class="ui-block-a">
-    								<button type="submit" data-role="button" data-theme="b">Register</button>
-    							</div>
-    							<div class="ui-block-b">
-    								<button type="reset" data-role="button">Cancel</button>
-    							</div>
-    						</div>
-    					</form>
-
-    				</div>
-    			</div>
-    			<div data-role="page" id="plans">
-
-    				<div data-role="header" data-position="fixed" data-tap-toggle="false"
-    				data-update-page-padding="false">
-    				<a href="#" data-slidemenu="#slidemenu" data-slideopen="false"
-    				class="menu-btn"><i class="fa fa-bars"></i></a>
-    				<h1>Entel</h1>
-    			</div>
-
-    			<div data-role="content" style="padding-top: 50px; padding-bottom: 15px;">
-    				<ul id="planTypesList" data-role="listview">
-    					<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit ui-first-child ui-last-child">Planes Telefonía Móvil</li>
-
-    				</ul>
-    			</div>
-    		</div>
-    		
-    		
-    	</body>
-    	</html>
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Ionic Blank Starter</h1>
+      </ion-header-bar>
+      <ion-content>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>

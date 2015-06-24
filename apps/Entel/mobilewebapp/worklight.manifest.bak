@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Created: 2015-06-23 21:16:04 UTC
+# Created: 2015-06-24 14:51:17 UTC
 # Modifying this file is possible only when the Cache Manifest value in the application descriptor is set to "Managed by user"
 css/main.css
 filelist
@@ -45,7 +45,6 @@ images/logo.png
 images/logo.png.orig
 images/thumbnail.png
 index.html
-jQuery.mmenu-master.zip
 jqueryMobile/images/ajax-loader.gif
 jqueryMobile/images/icons-png/action-black.png
 jqueryMobile/images/icons-png/action-white.png
@@ -250,20 +249,18 @@ jqueryMobile/images/icons-svg/video-white.svg
 jqueryMobile/jquery.mobile-1.4.5.css
 jqueryMobile/jquery.mobile-1.4.5.js
 js/initOptions.js
-js/login.js
+js/lib/backbone-min.js
+js/lib/underscore-min.js
 js/main.js
 js/messages.js
-js/plans.js
-js/register.js
-slideMenu/css/jqm.slidemenu.css
-slideMenu/img/smico.png
-slideMenu/img/smico1.png
-slideMenu/img/smico2.png
-slideMenu/img/smico3.png
-slideMenu/img/smico4.png
-slideMenu/img/smico5.png
-slideMenu/img/smico6.png
-slideMenu/img/tegan.jpg
+js/models/plan_type.js
+js/models/plan_type_collection.js
+js/pages/login.js
+js/pages/plans.js
+js/pages/register.js
+js/sync/plan_type.js
+js/views/plan_type_list_view.js
+js/views/plan_type_view.js
 worklight.manifest.bak
 worklight/messages/de/messages.json
 worklight/messages/es/messages.json

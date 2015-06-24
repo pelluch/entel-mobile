@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Created: 2015-06-23 21:35:13 UTC
+# Created: 2015-06-24 15:04:37 UTC
 # Modifying this file is possible only when the Cache Manifest value in the application descriptor is set to "Managed by user"
 
 NETWORK:
@@ -249,11 +249,17 @@ jqueryMobile/jquery.mobile-1.4.5.css
 jqueryMobile/jquery.mobile-1.4.5.js
 js/initOptions.js
 js/lib/backbone-min.js
+js/lib/underscore-min.js
 js/main.js
 js/messages.js
+js/models/plan_type.js
+js/models/plan_type_collection.js
 js/pages/login.js
 js/pages/plans.js
 js/pages/register.js
+js/sync/plan_type.js
+js/views/plan_type_list_view.js
+js/views/plan_type_view.js
 worklight.manifest.bak
 worklight/messages/de/messages.json
 worklight/messages/es/messages.json
