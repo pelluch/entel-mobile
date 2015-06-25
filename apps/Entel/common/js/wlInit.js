@@ -30,7 +30,7 @@ if (window.addEventListener) {
 
 
 
-var indicator = new WL.BusyIndicator();
+
 
 function wlCommonInit(){
     /*

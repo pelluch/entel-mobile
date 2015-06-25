@@ -1,11 +1,13 @@
 CACHE MANIFEST
-# Created: 2015-06-25 15:40:51 UTC
+# Created: 2015-06-25 20:15:18 UTC
 # Modifying this file is possible only when the Cache Manifest value in the application descriptor is set to "Managed by user"
 
 NETWORK:
 Gulpfile.js
 css/.gitkeep
+css/ionic.app.css
 css/main.css
+css/style.css
 filelist
 images/icon.png
 images/logo.png
@@ -3890,6 +3892,7 @@ node_modules/gulp/node_modules/vinyl-fs/node_modules/vinyl/node_modules/clone/te
 node_modules/gulp/node_modules/vinyl-fs/node_modules/vinyl/package.json
 node_modules/gulp/node_modules/vinyl-fs/package.json
 node_modules/gulp/package.json
+sass/ionic.app.scss
 sass/style.scss
 templates/browse.html
 templates/login.html

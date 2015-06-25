@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd apps/Entel
+mfp build -dd
+cd common
+gulp styles
+cd ../android/native
+ant clean
+ant debug
+ant installd
+adb shell am start -n com.Entel/com.Entel.Entel
