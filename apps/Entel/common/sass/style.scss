@@ -1,5 +1,16 @@
 /* Empty. Add your own CSS if you like */
 
+$btn-primary: #ff6702;
+$entel-blue: #0154a0 !default;
+
 html, body {
-    height: 100%;
+	height: 100%;
+}
+
+ion-header-bar {
+	background-color: $entel-blue !important;
+}
+
+.bar.bar-stable .title, .bar-stable .button.button-clear {
+	color: #fff !important;
 }
