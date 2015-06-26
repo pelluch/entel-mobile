@@ -4,8 +4,19 @@ angular.module('starter.connectors')
     this.getDailyTraffics = function(userId, opts) {
 
         var invocationData = {
-            adapter: "plan", 
+            adapter: "daily_traffic", 
             procedure: "getDailyTraffics",
+            parameters: [ userId ]
+        };
+        
+        WL.Client.invokeProcedure(invocationData, opts);
+    };
+
+    this.getMonthlyTraffic = function(userId, opts) {
+
+        var invocationData = {
+            adapter: "daily_traffic", 
+            procedure: "getMonthlyTraffic",
             parameters: [ userId ]
         };
         

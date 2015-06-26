@@ -34,28 +34,16 @@
  * 
  * @returns json list of items
  */
-function getDailyTraffics(userId) {
-
+function getVenues() {
+		
 	var input = {
-			method : 'get',
-			returnedContentType : 'json',
-			path : 'users/' + userId + '/daily_traffics'
+	    method : 'get',
+	    returnedContentType : 'json',
+	    path : 'venues'
 	};
-
-
+	
+	
 	return WL.Server.invokeHttp(input);
 }
-
-function getMonthlyTraffic(userId) {
-	var input = {
-			method : 'get',
-			returnedContentType : 'json',
-			path : 'users/' + userId + '/daily_traffics/month'
-	};
-
-
-	return WL.Server.invokeHttp(input);
-}
-
 
 

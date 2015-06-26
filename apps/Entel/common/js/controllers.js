@@ -91,14 +91,18 @@ angular.module('starter.controllers', [ 'starter.connectors' ])
 .controller('PlanTypeListCtrl', function($scope, $stateParams, PlanTypeConnector) {
 
   $scope.planTypes = [];
+  var indicator = new WL.BusyIndicator();
+  indicator.show();
   PlanTypeConnector.getPlanTypes({
     onSuccess: function(e) {
+      indicator.hide();
       $scope.planTypes = e.responseJSON.array;
       console.log($scope.planTypes);
       $scope.$apply();
     },
     onFailure: function(e) {
-
+      indicator.hide();
+      alert('No se han podido cargar los planes, revise su conectividad');
     }
   });
 })

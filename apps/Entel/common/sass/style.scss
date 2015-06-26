@@ -9,8 +9,31 @@ html, body {
 
 ion-header-bar {
 	background-color: $entel-blue !important;
+	.title {
+		color: #fff !important;
+	}
 }
 
 .bar.bar-stable .title, .bar-stable .button.button-clear {
 	color: #fff !important;
+}
+
+.logo-container {
+	text-align: center;
+	height: 50px;
+	width: 100%;
+}
+
+.welcome {
+	font-weight: bold;
+}
+
+.item {
+	color: #555555;
+	&.entel-blue {
+		color: $entel-blue;
+	}
+	&.header {
+		background-color: #eeeeee;
+	}
 }
