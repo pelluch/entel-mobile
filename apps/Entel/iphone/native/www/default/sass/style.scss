@@ -1,0 +1,130 @@
+/* Empty. Add your own CSS if you like */
+
+$btn-primary: #ff6702 !default;
+$entel-blue: #0154a0 !default;
+$light-gray: #eeeeee !default;
+$entel-orange: #fc6703 !default;
+$text-gray: #565656 !default;
+
+html, body {
+	height: 100%;
+}
+
+ion-header-bar {
+	background-color: $entel-blue !important;
+	.title {
+		color: #fff !important;
+	}
+}
+
+.bar.bar-stable .title, .bar-stable .button.button-clear {
+	color: #fff !important;
+}
+
+.logo-container {
+	text-align: center;
+	height: 50px;
+	width: 100%;
+	padding-top: 10px;
+}
+
+.welcome {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.item {
+	color: #555555;
+	&.entel-blue {
+		color: $entel-blue;
+	}
+	&.header {
+		background-color: #eeeeee;
+	}
+}
+
+.icon.fa {
+	color: $entel-blue;
+	width: 25px;
+}
+
+.menu-item {
+	padding-left: 10px;
+}
+
+.traffic-container {
+	padding-top: 20px;
+}
+
+.float-right {
+	float: right;
+}
+
+.caret {
+	font-weight: bold;
+	font-size: 24px;
+}
+.traffic-data {
+	color: #636466;
+	padding-top: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	
+
+	.data-title {
+		padding-bottom: 15px;
+	}
+	.data-content {
+		height: 40px;
+		background-color: $light-gray;
+		div {
+			padding-top: 10px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+}
+
+.vertical-center {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.entel-orange {
+	color: $entel-orange;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.plan-container {
+	color: $text-gray;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	.plan {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 10px;
+		background-color: $light-gray;
+		.plan-title {
+			color: $entel-blue;
+			font-size: 24px;
+		}
+
+		.plan-fixed {
+			padding-top: 10px;
+		}
+		.plan-internet  {
+			padding-top: 10px;
+			color: $entel-orange;
+		
+		}
+
+		.price-value {
+			margin-left: 80px;
+		}
+	}
+}

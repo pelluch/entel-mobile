@@ -1,0 +1,10 @@
+<ion-view view-title="Sucursales">
+  <ion-content>
+   	<ion-list>
+   	<ion-item class="center entel-blue header">Encuentra la tienda más cercana a tu ubicación</ion-item>
+      <ion-item class="center" ng-repeat="venue in venues">
+        {{venue.address}}
+      </ion-item>
+   	</ion-list>
+  </ion-content>
+</ion-view>

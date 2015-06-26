@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0B24A491-33E7-44B9-BA5D-3B6C3EBABEAC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>EntelEntelIphone</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>00CFE71A36D8AEF85EC71EB3E133A2B0EF004DE2</key>
+		<string>http://www.github.com/pelluch/entel-mobile.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>apps/Entel/iphone/native/EntelEntelIphone.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>00CFE71A36D8AEF85EC71EB3E133A2B0EF004DE2</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://www.github.com/pelluch/entel-mobile.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>00CFE71A36D8AEF85EC71EB3E133A2B0EF004DE2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>00CFE71A36D8AEF85EC71EB3E133A2B0EF004DE2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>entel-mobile</string>
+		</dict>
+	</array>
+</dict>
+</plist>

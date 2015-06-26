@@ -1,0 +1,11 @@
+<ion-view view-title="Planes">
+  <ion-content>
+    <ion-list>
+      <ion-item class="center entel-blue header">Planes Telefonía Móvil</ion-item>
+      <ion-item ng-repeat="planType in planTypes" href="#/app/plan_types/{{planType.id}}?name={{planType.name}}">
+        <span>{{planType.name}}</span>
+        <span class="caret entel-orange float-right">&gt;</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

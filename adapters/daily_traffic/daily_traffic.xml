@@ -15,7 +15,7 @@
 	<connectivity>
 		<connectionPolicy xsi:type="http:HTTPConnectionPolicyType">
 			<protocol>http</protocol>
-			<domain>localhost</domain>
+			<domain>192.168.1.184</domain>
 			<port>3000</port>
 			<connectionTimeoutInMilliseconds>30000</connectionTimeoutInMilliseconds>
 			<socketTimeoutInMilliseconds>30000</socketTimeoutInMilliseconds>
