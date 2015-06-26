@@ -1,5 +1,27 @@
 <ion-view view-title="Planes">
-  <ion-content>
-    <h1>Planos de cierto tipo</h1>
-  </ion-content>
+<ion-content>
+<ion-list>
+<ion-item class="center entel-blue header">{{ planTypeName }}</ion-item>
+</ion-list>
+
+<div class="plan-container" ng-repeat="plan in plans">
+	<div class="plan">
+		<div class="plan-title">
+			{{plan.name}}
+		</div>
+		<div class="plan-fixed">
+			<span class="price-label">Cargo fijo mensual</span>
+			<span class="price-value">{{ plan.price }}</span>
+		</div>
+		<div class="plan-internet">
+			<span class="price-label" ng-if="plan.internet_price !== null">Promoción internet</span>
+			<span class="price-value" ng-if="plan.internet_price !== null">{{ plan.internet_price }}
+				
+			</div>
+			<div ng-if="plan.internet_price !== null">
+				10% dscto.x 12 meses.
+			</div>
+		</div>
+	</div>
+</ion-content>
 </ion-view>

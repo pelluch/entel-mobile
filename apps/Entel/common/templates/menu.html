@@ -14,21 +14,26 @@
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Left</h1>
+      
     </ion-header-bar>
+
     <ion-content>
+    
+      <div class="logo-container center">
+        <img src="images/logo.png" height="75%">
+      </div>
       <ion-list>
         <ion-item menu-close ng-click="login()">
-          Login
+          <i class="fa fa-user icon"></i><span class="menu-item">Login</span>
         </ion-item>
         <ion-item menu-close href="#/app/plan_types">
-          Planes
+          <i class="fa fa-mobile-phone icon"></i><span class="menu-item">Planes</span>
         </ion-item>
-        <ion-item menu-close href="#/app/browse">
-          Mi plan
+        <ion-item menu-close href="#/app/traffic">
+          <i class="fa fa-clock-o icon"></i><span class="menu-item">Tráfico</span>
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Tráfico
+        <ion-item menu-close href="#/app/venues">
+          <i class="fa fa-map-marker icon"></i><span class="menu-item">Sucursales</span>
         </ion-item>
       </ion-list>
     </ion-content>

@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Created: 2015-06-25 23:27:45 UTC
+# Created: 2015-06-26 13:01:14 UTC
 # Modifying this file is possible only when the Cache Manifest value in the application descriptor is set to "Managed by user"
 Gulpfile.js
 css/.gitkeep
@@ -21,7 +21,9 @@ js/connectors/daily_traffic_connector.js
 js/connectors/plan_connector.js
 js/connectors/plan_type_connector.js
 js/connectors/user_connector.js
+js/connectors/venue_connector.js
 js/controllers.js
+js/controllers/plan_type_controller.js
 js/main.js
 js/validations.js
 js/wlInit.js
@@ -87,6 +89,7 @@ lib/ionic/scss/ionicons/_ionicons-icons.scss
 lib/ionic/scss/ionicons/_ionicons-variables.scss
 lib/ionic/scss/ionicons/ionicons.scss
 lib/ionic/version.json
+lib/moment.min.js
 lib/require.js
 lib/underscore-min.js
 sass/ionic.app.scss
@@ -94,11 +97,14 @@ sass/style.scss
 templates/browse.html
 templates/login.html
 templates/menu.html
+templates/plan.html
 templates/plan_type.html
 templates/plan_types.html
 templates/playlist.html
 templates/playlists.html
 templates/search.html
+templates/traffic.html
+templates/venues.html
 worklight.manifest.bak
 worklight/messages/de/messages.json
 worklight/messages/es/messages.json

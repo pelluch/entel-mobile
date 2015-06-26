@@ -77,16 +77,6 @@ angular.module('starter.controllers', [ 'starter.connectors' ])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-  { title: 'Reggae', id: 1 },
-  { title: 'Chill', id: 2 },
-  { title: 'Dubstep', id: 3 },
-  { title: 'Indie', id: 4 },
-  { title: 'Rap', id: 5 },
-  { title: 'Cowbell', id: 6 }
-  ];
-})
 
 .controller('PlanTypeListCtrl', function($scope, $stateParams, PlanTypeConnector) {
 
@@ -107,5 +97,78 @@ angular.module('starter.controllers', [ 'starter.connectors' ])
   });
 })
 
-.controller('PlanTypeCtrl', function($scope, $stateParams) {
+.controller('PlanTypeCtrl', function($scope, $stateParams, $location, PlanConnector) {
+console.log($stateParams);
+  $scope.plans = [];
+  var indicator = new WL.BusyIndicator();
+  indicator.show();
+  PlanConnector.getPlans($stateParams.planTypeId, {
+    onSuccess: function(e) {
+      indicator.hide();
+      $scope.plans = e.responseJSON.array;
+      $scope.planTypeName = $location.search().name;
+      console.log($scope.plans);
+      $scope.$apply();
+    },
+    onFailure: function(e) {
+      indicator.hide();
+      alert('No se han podido cargar los planes, revise su conectividad');
+    }
+  });
+})
+
+.controller('VenueListCtrl', function($scope, $stateParams, VenueConnector) {
+
+  var indicator = new WL.BusyIndicator();
+  indicator.show();
+  VenueConnector.getVenues({
+    onSuccess: function(e) {
+      indicator.hide();
+      $scope.venues = e.responseJSON.array;
+      $scope.$apply();
+    },
+    onFailure: function(e) {
+      indicator.hide();
+      alert('No se han podido cargar los locales, revise su conectividad');
+    }
+  });
+
+})
+
+.controller('TrafficCtrl', function($scope, $stateParams, DailyTrafficConnector) {
+
+  var indicator = new WL.BusyIndicator();
+  indicator.show();
+  DailyTrafficConnector.getMonthlyTraffic(1, {
+    onSuccess: function(e) {
+      indicator.hide();
+      var traffic = e.responseJSON;
+      var duration = moment.duration({'seconds' : traffic.seconds});
+      console.log(duration);
+      var hours = duration.hours();
+      console.log(hours);
+      var minutes = duration.minutes();
+
+      minutes += hours*60;
+      console.log(minutes);
+      traffic.minutes = minutes + ":" + duration.seconds();
+      $scope.traffic = [ 
+        { title: "Voz", subtitle: "Minutos utilizados", value: traffic.minutes },
+        { title: "Mensajes", subtitle: "SMS/MMS y Otros", value: traffic.messages },
+        { title: "Datos", subtitle: "Total utilizado", value: traffic.megabytes }
+      ];
+      $scope.plan = {
+        name: traffic.plan_name,
+        type_name: traffic.plan_type_name
+      };
+      
+      $scope.date = moment().format("DD.MM.YYYY");
+      $scope.$apply();
+    },
+    onFailure: function(e) {
+      indicator.hide();
+      alert('No se han podido cargar el tráfico, revise su conectividad');
+    }
+  });
+
 });

@@ -1,0 +1,21 @@
+<ion-view view-title="Tráfico">
+<ion-content>
+<ion-list>
+<ion-item class="center entel-blue header">{{ plan.type_name }} - {{ plan.name }} </ion-item>
+</ion-list>
+
+<div class="traffic-container">
+<div class="traffic-data" ng-repeat="data in traffic">
+	<div class="data-title">
+		<span class="entel-orange">{</span> {{ data.title }}
+		<span class="float-right">al {{ date }}</span>
+	</div>
+	<div class="data-content">
+		<div>
+			<span>{{ data.subtitle}}</span>
+			<span class="float-right bold">{{ data.value }}</span>
+		</div>
+		</div>
+</div>
+</ion-content>
+</ion-view>
