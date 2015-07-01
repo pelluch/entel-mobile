@@ -39,7 +39,7 @@ function getPlans(planTypeId) {
 	var input = {
 	    method : 'get',
 	    returnedContentType : 'json',
-	    path : 'plan_types/' + planTypeId + '/plans'
+	    path : 'entel/plan_types/' + planTypeId + '/plans'
 	};
 	
 	
@@ -51,7 +51,7 @@ function getPlan(userId) {
 	var input = {
 	    method : 'get',
 	    returnedContentType : 'json',
-	    path : 'users/' + userId + '/plan'
+	    path : 'entel/users/' + userId + '/plan'
 	};
 	
 	

@@ -39,7 +39,7 @@ function getDailyTraffics(userId) {
 	var input = {
 			method : 'get',
 			returnedContentType : 'json',
-			path : 'users/' + userId + '/daily_traffics'
+			path : 'entel/users/' + userId + '/daily_traffics'
 	};
 
 
@@ -50,7 +50,7 @@ function getMonthlyTraffic(userId) {
 	var input = {
 			method : 'get',
 			returnedContentType : 'json',
-			path : 'users/' + userId + '/daily_traffics/month'
+			path : 'entel/users/' + userId + '/daily_traffics/month'
 	};
 
 

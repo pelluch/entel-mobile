@@ -41,7 +41,7 @@ function addUser(user) {
 	var input = {
 			method : 'post',
 			returnedContentType : 'json',
-			path : 'users',
+			path : 'entel/users',
 			body: {
 				contentType : 'application/json; charset=utf-8',
 				content: user
@@ -56,7 +56,7 @@ function login(loginInfo) {
 	var input = {
 			method : 'post',
 			returnedContentType : 'json',
-			path : 'access_tokens',
+			path : 'entel/access_tokens',
 			body: {
 				contentType : 'application/json; charset=utf-8',
 				content: loginInfo

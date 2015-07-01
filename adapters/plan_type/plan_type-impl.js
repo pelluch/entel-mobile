@@ -39,7 +39,7 @@ function getPlanTypes() {
 	var input = {
 	    method : 'get',
 	    returnedContentType : 'json',
-	    path : 'plan_types'
+	    path : 'entel/plan_types'
 	};
 	
 	

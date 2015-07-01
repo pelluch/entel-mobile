@@ -23,17 +23,20 @@
         <img src="images/logo.png" height="75%">
       </div>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
+        <ion-item ng-if="!loggedIn" menu-close href="#/app/login">
           <i class="fa fa-user icon"></i><span class="menu-item">Login</span>
         </ion-item>
         <ion-item menu-close href="#/app/plan_types">
           <i class="fa fa-mobile-phone icon"></i><span class="menu-item">Planes</span>
         </ion-item>
-        <ion-item menu-close href="#/app/traffic">
+        <ion-item ng-if="loggedIn" menu-close href="#/app/traffic">
           <i class="fa fa-clock-o icon"></i><span class="menu-item">Tráfico</span>
         </ion-item>
         <ion-item menu-close href="#/app/venues">
           <i class="fa fa-map-marker icon"></i><span class="menu-item">Sucursales</span>
+        </ion-item>
+        <ion-item ng-if="loggedIn" menu-close ng-click="logout()">
+          <i class="fa fa-user icon"></i><span class="menu-item">Logout</span>
         </ion-item>
       </ion-list>
     </ion-content>

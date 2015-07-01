@@ -39,7 +39,7 @@ function getVenues() {
 	var input = {
 	    method : 'get',
 	    returnedContentType : 'json',
-	    path : 'venues'
+	    path : 'entel/venues'
 	};
 	
 	

@@ -21,4 +21,22 @@ angular.module('starter.services', [])
     this.setToken = function(newToken) {
     	this.token = newToken;
     };
+
+    this.clear = function(callback) {
+        this.token = null;
+        WL.JSONStore.get('AccessToken').removeCollection().then(function() {
+             var collections = {};
+            collections["AccessToken"] = {
+              searchFields: {
+                token: 'string'
+              }
+            };
+
+            WL.JSONStore.init(collections, {
+              localKeyGen: false
+            }).then(function() {
+                callback();
+            });
+        });
+    };
 });

@@ -21,11 +21,14 @@
 		<div class="plan-internet">
 			<span class="price-label" ng-if="plan.internet_price !== null">Promoción internet</span>
 			<span class="price-value" ng-if="plan.internet_price !== null">{{ plan.internet_price }}
-				
+				<div class="plan-purchase">
+					<a href='#'>[ Solicitar_</a>
+				</div>
 			</div>
 			<div ng-if="plan.internet_price !== null">
 				10% dscto.x 12 meses.
 			</div>
+
 		</div>
 	</div>
 </ion-content>

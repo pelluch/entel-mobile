@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Created: 2015-07-01 03:17:13 UTC
+# Created: 2015-07-01 11:19:15 UTC
 # Modifying this file is possible only when the Cache Manifest value in the application descriptor is set to "Managed by user"
 
 NETWORK:
@@ -23,13 +23,15 @@ js/connectors/plan_type_connector.js
 js/connectors/user_connector.js
 js/connectors/venue_connector.js
 js/controllers.js
+js/controllers/login_controller.js
 js/controllers/plan_type_controller.js
+js/controllers/traffic_controller.js
+js/controllers/venue_controller.js
 js/main.js
 js/services/token.js
 js/utils.js
 js/validations.js
 js/wlInit.js
-lib/angular-cookies.min.js
 lib/font-awesome/css/font-awesome.css
 lib/font-awesome/css/font-awesome.min.css
 lib/font-awesome/fonts/FontAwesome.otf

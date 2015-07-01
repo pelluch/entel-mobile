@@ -18,6 +18,18 @@ html, body {
 	}
 }
 
+.plan-purchase {
+	float: right;
+	margin-right: 10px;
+	color: white;
+	background-color: $entel-orange;
+	padding: 5px;
+	a, span {
+		color: white;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
 
 .title {
 	.nav-logo {
