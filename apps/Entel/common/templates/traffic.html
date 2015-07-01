@@ -1,21 +1,26 @@
-<ion-view view-title="Tráfico">
+<ion-view >
+<ion-nav-title>
+<img class="nav-logo" src="images/logo-white.png" height="75%" >
+<span class="nav-title"> Consulta de Tráfico_</span>
+</ion-nav-title>
 <ion-content>
-<ion-list>
-<ion-item class="center entel-blue header">{{ plan.type_name }} - {{ plan.name }} </ion-item>
-</ion-list>
+
+<div class="center content-title">
+	<h2>Asignación Interna 3 SGO</h2>
+</div>
 
 <div class="traffic-container">
-<div class="traffic-data" ng-repeat="data in traffic">
-	<div class="data-title">
-		<span class="entel-orange">{</span> {{ data.title }}
-		<span class="float-right">al {{ date }}</span>
+	<div class="traffic-data" ng-repeat="data in traffic">
+		<div class="data-title">
+			<span class="entel-orange">{</span> {{ data.title }}
+			<span class="float-right">al {{ date }}</span>
+		</div>
+		<div class="data-content">
+			<div>
+				<span>{{ data.subtitle}}</span>
+				<span class="float-right bold">{{ data.value }}</span>
+			</div>
+		</div>
 	</div>
-	<div class="data-content">
-		<div>
-			<span>{{ data.subtitle}}</span>
-			<span class="float-right bold">{{ data.value }}</span>
-		</div>
-		</div>
-</div>
 </ion-content>
 </ion-view>

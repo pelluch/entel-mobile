@@ -1,7 +1,8 @@
 
-angular.module('starter.controllers', [ 'starter.connectors' ])
+angular.module('starter.controllers', [ 'starter.connectors', 'starter.utils',
+  'starter.services' ])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, UserConnector) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $location, UserConnector, Token) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -18,7 +19,16 @@ angular.module('starter.controllers', [ 'starter.connectors' ])
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
-  });
+
+    Token.getToken(function(t) {
+      if(t) {
+        $location.path( "/app/plan_types" );     
+      } else {
+        $scope.login(); 
+      }
+    });
+   
+   });
 
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
@@ -56,12 +66,34 @@ angular.module('starter.controllers', [ 'starter.connectors' ])
     UserConnector.login($scope.loginData, {
       onSuccess: function(e) {
         indicator.hide();
-        console.log(e);
-
+        Token.setToken(e.responseJSON.access_token.token);
         if(e.responseJSON.statusCode === 401) {
           alert('Usuario o clave incorrectos, por favor intente de nuevo.');
         } else if(e.responseJSON.statusCode === 200) {
           $scope.closeLogin();
+          WL.JSONStore.destroy().then(function() {
+            var collections = {};
+            collections["AccessToken"] = {
+              searchFields: {
+                token: 'string'
+              }
+            };
+
+            WL.JSONStore.init(collections, {
+              localKeyGen: false
+            }).then(function() {
+              WL.JSONStore.get('AccessToken').add([{
+                token: e.responseJSON.access_token.token
+              }]).then(function() {
+
+              });
+              
+            }).fail(function(e) {
+              console.log(e);
+            });
+          });
+          
+          
         }
       },
       onFailure: function(e) {
@@ -75,8 +107,12 @@ angular.module('starter.controllers', [ 'starter.connectors' ])
     // code if using a login system
 
   };
-})
 
+
+})
+.controller('MainCtrl', function($scope, $stateParams) {
+
+})
 
 .controller('PlanTypeListCtrl', function($scope, $stateParams, PlanTypeConnector) {
 
@@ -97,8 +133,8 @@ angular.module('starter.controllers', [ 'starter.connectors' ])
   });
 })
 
-.controller('PlanTypeCtrl', function($scope, $stateParams, $location, PlanConnector) {
-console.log($stateParams);
+.controller('PlanTypeCtrl', function($scope, $stateParams, $location, Utils, PlanConnector) {
+  console.log($stateParams);
   $scope.plans = [];
   var indicator = new WL.BusyIndicator();
   indicator.show();
@@ -106,6 +142,10 @@ console.log($stateParams);
     onSuccess: function(e) {
       indicator.hide();
       $scope.plans = e.responseJSON.array;
+      _.each($scope.plans, function(plan) {
+        plan.price = Utils.getFormattedMoney(plan.price);
+        plan.internet_price = Utils.getFormattedMoney(plan.internet_price);
+      });
       $scope.planTypeName = $location.search().name;
       console.log($scope.plans);
       $scope.$apply();
@@ -153,9 +193,9 @@ console.log($stateParams);
       console.log(minutes);
       traffic.minutes = minutes + ":" + duration.seconds();
       $scope.traffic = [ 
-        { title: "Voz", subtitle: "Minutos utilizados", value: traffic.minutes },
-        { title: "Mensajes", subtitle: "SMS/MMS y Otros", value: traffic.messages },
-        { title: "Datos", subtitle: "Total utilizado", value: traffic.megabytes }
+      { title: "Voz", subtitle: "Minutos utilizados", value: traffic.minutes },
+      { title: "Mensajes", subtitle: "SMS/MMS y Otros", value: traffic.messages },
+      { title: "Datos", subtitle: "Total utilizado", value: traffic.megabytes + " MB" }
       ];
       $scope.plan = {
         name: traffic.plan_name,
