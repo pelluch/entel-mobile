@@ -1,2 +1,2 @@
-var WL_CHECKSUM = {"date":1435705549174,"machine":"einstein","checksum":3658597696};
-/* Date: Tue Jun 30 20:05:49 CLT 2015 */
+var WL_CHECKSUM = {"checksum":1050797567,"date":1436156381403,"machine":"Pablos-MBP.iptv\\.microsoft\\.com"};
+/* Date: Mon Jul 06 01:19:41 CLT 2015 */

@@ -41,6 +41,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
+  .state('app.login', {
+    url: "/login",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/login.html",
+        controller: 'LoginCtrl'
+      }
+    }
+  })
 
   .state('app.traffic', {
     url: "/traffic",
@@ -60,6 +69,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
+  .state('app.main', {
+    url: "/main",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/main.html",
+        controller: 'MainCtrl'
+      }
+    }
+  })
   .state('app.plan_type', {
     url: "/plan_types/:planTypeId",
     views: {
@@ -71,5 +89,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/plan_types');
+  $urlRouterProvider.otherwise('/app/login');
 });

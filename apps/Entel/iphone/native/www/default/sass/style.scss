@@ -6,8 +6,46 @@ $light-gray: #eeeeee !default;
 $entel-orange: #fc6703 !default;
 $text-gray: #565656 !default;
 
+.item-complex .item-content, .item-radio .item-content {
+	padding: 16px 16px 16px 16px !important;
+}
+
 html, body {
 	height: 100%;
+}
+
+.content-title {
+	margin-top: 15px;
+	h2 {
+		color: $entel-orange;
+		font-size: 16px;
+	}
+}
+
+.plan-purchase {
+	float: right;
+	margin-right: 10px;
+	color: white;
+	background-color: $entel-orange;
+	padding: 5px;
+	a, span {
+		color: white;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+
+.title {
+	.nav-logo {
+		padding-top: 5px;
+	}
+	.nav-title {
+		margin-left: 10px;
+		font-weight: bold;
+	}
+
+	text-align: left !important;
+	
 }
 
 ion-header-bar {
@@ -21,7 +59,7 @@ ion-header-bar {
 	color: #fff !important;
 }
 
-.logo-container {
+div.logo-container {
 	text-align: center;
 	height: 50px;
 	width: 100%;
@@ -99,6 +137,20 @@ ion-header-bar {
 	font-weight: bold;
 }
 
+
+#map-container {
+	width: 100%;
+	text-align: center;
+	height: 400px;
+	margin-top: 10px;
+
+		.angular-google-map-container { 
+		height: 400px; 
+		width: 75%;
+		display: inline-block;
+	}
+}
+
 .plan-container {
 	color: $text-gray;
 	padding-top: 20px;
@@ -111,7 +163,7 @@ ion-header-bar {
 		background-color: $light-gray;
 		.plan-title {
 			color: $entel-blue;
-			font-size: 24px;
+			font-size: 18px;
 		}
 
 		.plan-fixed {
@@ -120,11 +172,11 @@ ion-header-bar {
 		.plan-internet  {
 			padding-top: 10px;
 			color: $entel-orange;
-		
+
 		}
 
 		.price-value {
-			margin-left: 80px;
+			margin-left: 10px;
 		}
 	}
 }

@@ -1,4 +1,8 @@
-<ion-view view-title="Sucursales">
+<ion-view>
+<ion-nav-title>
+<img class="nav-logo" src="images/logo-white.png" height="75%" >
+<span class="nav-title"> Sucursales_</span>
+</ion-nav-title>
   <ion-content>
    	<ion-list>
    	<ion-item class="center entel-blue header">Encuentra la tienda más cercana a tu ubicación</ion-item>
@@ -6,5 +10,12 @@
         {{venue.address}}
       </ion-item>
    	</ion-list>
+   	<div id="map-container">
+   	<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+   	</div>
   </ion-content>
+
+  
 </ion-view>
+
+
