@@ -25,8 +25,9 @@
     </iphone>
     <userIdentityRealms/>
     <accessTokenExpiration>3600</accessTokenExpiration>
-    <android version="1.0">
-        <worklightSettings include="false"/>
+    <android version="1.0" >
+    	<worklightSettings include="false"/>
+        <pushSender key="AIzaSyD4dJRbAsr7EzjQGkkNhO9k2EHrDSRm-uo" senderId="720300129378"/>
         <security>
             <encryptWebResources enabled="false"/>
             <testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3"/>

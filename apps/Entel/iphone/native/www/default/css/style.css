@@ -4,6 +4,31 @@
 html, body {
   height: 100%; }
 
+.content-title {
+  margin-top: 15px; }
+  .content-title h2 {
+    color: #fc6703;
+    font-size: 16px; }
+
+.plan-purchase {
+  float: right;
+  margin-right: 10px;
+  color: white;
+  background-color: #fc6703;
+  padding: 5px; }
+  .plan-purchase a, .plan-purchase span {
+    color: white;
+    font-weight: bold;
+    text-decoration: none; }
+
+.title {
+  text-align: left !important; }
+  .title .nav-logo {
+    padding-top: 5px; }
+  .title .nav-title {
+    margin-left: 10px;
+    font-weight: bold; }
+
 ion-header-bar {
   background-color: #0154a0 !important; }
   ion-header-bar .title {
@@ -12,7 +37,7 @@ ion-header-bar {
 .bar.bar-stable .title, .bar-stable .button.button-clear {
   color: #fff !important; }
 
-.logo-container {
+div.logo-container {
   text-align: center;
   height: 50px;
   width: 100%;

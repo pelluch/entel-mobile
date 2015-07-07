@@ -10,6 +10,40 @@ html, body {
 	height: 100%;
 }
 
+.content-title {
+	margin-top: 15px;
+	h2 {
+		color: $entel-orange;
+		font-size: 16px;
+	}
+}
+
+.plan-purchase {
+	float: right;
+	margin-right: 10px;
+	color: white;
+	background-color: $entel-orange;
+	padding: 5px;
+	a, span {
+		color: white;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+
+.title {
+	.nav-logo {
+		padding-top: 5px;
+	}
+	.nav-title {
+		margin-left: 10px;
+		font-weight: bold;
+	}
+
+	text-align: left !important;
+	
+}
+
 ion-header-bar {
 	background-color: $entel-blue !important;
 	.title {
@@ -21,7 +55,7 @@ ion-header-bar {
 	color: #fff !important;
 }
 
-.logo-container {
+div.logo-container {
 	text-align: center;
 	height: 50px;
 	width: 100%;
@@ -120,7 +154,7 @@ ion-header-bar {
 		.plan-internet  {
 			padding-top: 10px;
 			color: $entel-orange;
-		
+
 		}
 
 		.price-value {

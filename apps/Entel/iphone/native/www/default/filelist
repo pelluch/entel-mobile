@@ -5,6 +5,7 @@
 /filelist
 /Gulpfile.js
 /images/icon.png
+/images/logo-white.png
 /images/logo.png
 /images/logo.png.orig
 /images/thumbnail.png
@@ -17,8 +18,13 @@
 /js/connectors/user_connector.js
 /js/connectors/venue_connector.js
 /js/controllers.js
+/js/controllers/login_controller.js
 /js/controllers/plan_type_controller.js
+/js/controllers/traffic_controller.js
+/js/controllers/venue_controller.js
 /js/main.js
+/js/services/token.js
+/js/utils.js
 /js/validations.js
 /js/wlInit.js
 /lib/font-awesome/css/font-awesome.css
@@ -123,6 +129,7 @@
 /sass/ionic.app.scss
 /sass/style.scss
 /templates/login.html
+/templates/main.html
 /templates/menu.html
 /templates/plan_type.html
 /templates/plan_types.html
@@ -130,6 +137,7 @@
 /templates/venues.html
 /worklight/cordova.js
 /worklight/cordova_plugins.js
+/worklight/jsonstore.js
 /worklight/messages/de/messages.json
 /worklight/messages/es/messages.json
 /worklight/messages/fr/messages.json
