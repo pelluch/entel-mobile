@@ -11,8 +11,12 @@ angular.module('starter.controllers')
          disableBack: true
        });
         $state.go('app.plan_types', {}, { location: "replace", reload: true }).then(function() {
-          // WL.App.hideSplashScreen();
+            setTimeout(function() {
+              WL.App.hideSplashScreen();
+            }, 2000);
         });
+      } else {
+        WL.App.hideSplashScreen();
       }
     });
 

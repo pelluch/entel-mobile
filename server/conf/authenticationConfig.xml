@@ -23,17 +23,11 @@
 		specific guidelines. -->
 
 	<securityTests>
-		<!-- <mobileSecurityTest name="mobileTests"> <testAppAuthenticity/> <testDeviceId 
-			provisioningType="none" /> <testUser realm="myMobileLoginForm" /> <testDirectUpdate 
-			mode="perSession" /> </mobileSecurityTest> <webSecurityTest name="webTests"> 
-			<testUser realm="myWebLoginForm"/> </webSecurityTest> <customSecurityTest 
-			name="customTests"> <test realm="wl_antiXSRFRealm" step="1"/> <test realm="wl_authenticityRealm" 
-			step="1"/> <test realm="wl_remoteDisableRealm" step="1"/> <test realm="wl_directUpdateRealm" 
-			mode="perSession" step="1"/> <test realm="wl_anonymousUserRealm" isInternalUserID="true" 
-			step="1"/> <test realm="wl_deviceNoProvisioningRealm" isInternalDeviceID="true" 
-			step="2"/> </customSecurityTest> <customSecurityTest name="LogUploadServlet"> 
-			<test realm="wl_anonymousUserRealm" step="1"/> <test realm="LogUploadServlet" 
-			isInternalUserID="true"/> </customSecurityTest> -->
+		<mobileSecurityTest name="mobileTests">
+			<testUser realm="wl_anonymousUserRealm" />
+			<testDeviceId provisioningType="none" />
+		</mobileSecurityTest>
+
 		<customSecurityTest name="SubscribeServlet">
 			<test realm="SubscribeServlet" isInternalUserID="true" />
 		</customSecurityTest>

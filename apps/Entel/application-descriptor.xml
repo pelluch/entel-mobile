@@ -25,7 +25,7 @@
     </iphone>
     <userIdentityRealms/>
     <accessTokenExpiration>3600</accessTokenExpiration>
-    <android version="1.0">
+    <android securityTest="mobileTests" version="1.0">
     	<worklightSettings include="false"/>
         <pushSender key="AIzaSyD4dJRbAsr7EzjQGkkNhO9k2EHrDSRm-uo" senderId="720300129378"/>
         <security>
