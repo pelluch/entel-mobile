@@ -12,7 +12,9 @@ angular.module('starter.controllers')
         $ionicViewService.nextViewOptions({
          disableBack: true
        });
-        $state.go('app.plan_types', {}, { location: "replace", reload: true });
+        $state.go('app.plan_types', {}, { location: "replace", reload: true }).then(function() {
+          // WL.App.hideSplashScreen();
+        });
       }
     });
 

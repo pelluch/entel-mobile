@@ -5,7 +5,7 @@
 var wlInitOptions = {
 
     // # To disable automatic hiding of the splash screen uncomment this property and use WL.App.hideSplashScreen() API
-    //autoHideSplash: false,
+    autoHideSplash: false,
     
     // # The callback function to invoke in case application fails to connect to MobileFirst Server
     //onConnectionFailure: function (){},
@@ -55,7 +55,7 @@ function wlCommonInit(){
         }   
 
         angular.element(document).ready(function() {
-            WL.App.hideSplashScreen();
+            
             angular.bootstrap(document, ['starter']);
         });         
     });

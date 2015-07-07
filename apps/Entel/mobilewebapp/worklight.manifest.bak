@@ -1,8 +1,7 @@
 CACHE MANIFEST
-# Created: 2015-06-30 23:05:44 UTC
+# Created: 2015-07-07 05:48:45 UTC
 # Modifying this file is possible only when the Cache Manifest value in the application descriptor is set to "Managed by user"
 Gulpfile.js
-css/.gitkeep
 css/ionic.app.css
 css/main.css
 css/style.css
@@ -11,6 +10,7 @@ images/icon.png
 images/icon114x114.png
 images/icon57x57.png
 images/icon72x72.png
+images/logo-white.png
 images/logo.png
 images/logo.png.orig
 images/thumbnail.png
@@ -23,11 +23,16 @@ js/connectors/plan_type_connector.js
 js/connectors/user_connector.js
 js/connectors/venue_connector.js
 js/controllers.js
+js/controllers/login_controller.js
 js/controllers/plan_type_controller.js
+js/controllers/traffic_controller.js
+js/controllers/venue_controller.js
 js/main.js
+js/services/token.js
+js/utils.js
 js/validations.js
 js/wlInit.js
-lib/font-awesome/css/font-awesome.css
+lib/angular-google-maps.min.js
 lib/font-awesome/css/font-awesome.min.css
 lib/font-awesome/fonts/FontAwesome.otf
 lib/font-awesome/fonts/fontawesome-webfont.eot
@@ -35,32 +40,6 @@ lib/font-awesome/fonts/fontawesome-webfont.svg
 lib/font-awesome/fonts/fontawesome-webfont.ttf
 lib/font-awesome/fonts/fontawesome-webfont.woff
 lib/font-awesome/fonts/fontawesome-webfont.woff2
-lib/font-awesome/less/animated.less
-lib/font-awesome/less/bordered-pulled.less
-lib/font-awesome/less/core.less
-lib/font-awesome/less/fixed-width.less
-lib/font-awesome/less/font-awesome.less
-lib/font-awesome/less/icons.less
-lib/font-awesome/less/larger.less
-lib/font-awesome/less/list.less
-lib/font-awesome/less/mixins.less
-lib/font-awesome/less/path.less
-lib/font-awesome/less/rotated-flipped.less
-lib/font-awesome/less/stacked.less
-lib/font-awesome/less/variables.less
-lib/font-awesome/scss/_animated.scss
-lib/font-awesome/scss/_bordered-pulled.scss
-lib/font-awesome/scss/_core.scss
-lib/font-awesome/scss/_fixed-width.scss
-lib/font-awesome/scss/_icons.scss
-lib/font-awesome/scss/_larger.scss
-lib/font-awesome/scss/_list.scss
-lib/font-awesome/scss/_mixins.scss
-lib/font-awesome/scss/_path.scss
-lib/font-awesome/scss/_rotated-flipped.scss
-lib/font-awesome/scss/_stacked.scss
-lib/font-awesome/scss/_variables.scss
-lib/font-awesome/scss/font-awesome.scss
 lib/ionic/css/ionic.css
 lib/ionic/css/ionic.min.css
 lib/ionic/fonts/ionicons.eot
@@ -129,12 +108,14 @@ lib/underscore-min.js
 sass/ionic.app.scss
 sass/style.scss
 templates/login.html
+templates/main.html
 templates/menu.html
 templates/plan_type.html
 templates/plan_types.html
 templates/traffic.html
 templates/venues.html
 worklight.manifest.bak
+worklight/jsonstore.js
 worklight/messages/de/messages.json
 worklight/messages/es/messages.json
 worklight/messages/fr/messages.json
