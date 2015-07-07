@@ -6,6 +6,10 @@ $light-gray: #eeeeee !default;
 $entel-orange: #fc6703 !default;
 $text-gray: #565656 !default;
 
+.item-complex .item-content, .item-radio .item-content {
+	padding: 16px 16px 16px 16px !important;
+}
+
 html, body {
 	height: 100%;
 }
@@ -133,6 +137,20 @@ div.logo-container {
 	font-weight: bold;
 }
 
+
+#map-container {
+	width: 100%;
+	text-align: center;
+	height: 400px;
+	margin-top: 10px;
+
+		.angular-google-map-container { 
+		height: 400px; 
+		width: 75%;
+		display: inline-block;
+	}
+}
+
 .plan-container {
 	color: $text-gray;
 	padding-top: 20px;
@@ -145,7 +163,7 @@ div.logo-container {
 		background-color: $light-gray;
 		.plan-title {
 			color: $entel-blue;
-			font-size: 24px;
+			font-size: 18px;
 		}
 
 		.plan-fixed {
@@ -158,7 +176,7 @@ div.logo-container {
 		}
 
 		.price-value {
-			margin-left: 80px;
+			margin-left: 10px;
 		}
 	}
 }

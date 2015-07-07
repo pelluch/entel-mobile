@@ -8,3 +8,5 @@ apps/*/blackberry10/native/www
 apps/*/blackberry10/native/build
 bin
 out
+apps/*/common/css
+.DS_Store

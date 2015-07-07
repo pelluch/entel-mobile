@@ -1,6 +1,6 @@
 
 angular.module('starter.controllers', [ 'starter.connectors', 'starter.utils',
-  'starter.services' ])
+  'starter.services', 'uiGmapgoogle-maps' ])
 
 .controller('AppCtrl', function($scope, $ionicViewService, $state, $ionicModal, $timeout, $location, $ionicSideMenuDelegate, UserConnector, Token) {
 
