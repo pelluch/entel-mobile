@@ -1,13 +1,11 @@
 CACHE MANIFEST
-# Created: 2015-07-07 20:31:20 UTC
+# Created: 2015-07-08 03:40:15 UTC
 # Modifying this file is possible only when the Cache Manifest value in the application descriptor is set to "Managed by user"
 Gulpfile.js
-css/.gitkeep
 css/ionic.app.css
 css/main.css
 css/style.css
 filelist
-images/.DS_Store
 images/icon.png
 images/icon114x114.png
 images/icon57x57.png
@@ -117,6 +115,7 @@ templates/plan_types.html
 templates/traffic.html
 templates/venues.html
 worklight.manifest.bak
+worklight/Tealeaf.min.js
 worklight/jsonstore.js
 worklight/messages/de/messages.json
 worklight/messages/es/messages.json

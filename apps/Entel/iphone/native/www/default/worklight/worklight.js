@@ -1143,7 +1143,7 @@ window.WLJSX.Ajax.Request = WLJSX.Class.create({
       }
 
 		for (var name in headers)
-      this.transport.setRequestHeader(name, unescape(encodeURIComponent(headers[name])));
+      this.transport.setRequestHeader(name, headers[name]);
   },
 
   success: function() {
@@ -2727,9 +2727,8 @@ __WLSimpleDialog = function() {
             		messageDialog.commands.append(new Windows.UI.Popups.UICommand(buttons[i].text, buttons[i].handler));
             	}
             }
-            messageDialog.showAsync().done(
-            		function () { WL.SimpleDialog.__callback(buttons.length); },
-                    function () { WL.SimpleDialog.__callback(buttons.length); });
+            messageDialog.showAsync();
+            this.__callback(buttons.length);
         } else {
             var dialogOptions = options || {};
 
@@ -2853,9 +2852,6 @@ __WLApp = function() {
         case WL.Env.IPAD:
         case WL.Env.IPHONE:
         	window.open(absoluteURL, '_system'); 
-            break;
-        case WL.Env.WINDOWS8:
-        	Windows.System.Launcher.launchUriAsync(new Windows.Foundation.Uri(absoluteURL));
             break;
         case WL.Env.ADOBE_AIR:
             var urlReq = new window.runtime.flash.net.URLRequest(absoluteURL);
@@ -5501,9 +5497,7 @@ WL.Logger = (function (jQuery) {
     
     // For web logger state manipulation
     __state: function() { return state; },
-    __updateState: function(newState) { 
-    	if(newState) {state = newState; }
-    }
+    __updateState: function(newState) { state = newState; }
   };
 
   //Add .debug(), .log(), etc. to WL.Logger's public API
@@ -5549,24 +5543,6 @@ WL.WebLogger = (function(jQuery) {
     BUFFER_TIME_IN_MILLISECONDS = 60000,
     sendLogsTimeBuffer = 0;
 
-    if (!window.console) {  // thanks a lot, IE9
-      /*jshint -W020 */
-      console = {
-        error: function() {},
-        warn: function() {},
-        info: function() {},
-        log: function() {},
-        debug: function() {},
-        trace: function() {}
-      };
-    }
-
-    console.log = console.log || function() {};  // I suppose console.log is the most likely to exist.
-    console.warn = console.warn || console.log;
-    console.error = console.error || console.log;
-    console.info = console.info || console.log;
-    console.debug = console.debug || console.info;
-    console.trace = console.trace || console.debug;  // try to keep the verbosity down a bit
     
     var __usingLocalConfiguration = function(){
 	  	var configurationString = localStorage.getItem(KEY_REMOTE_STORAGE_CONFIG);
@@ -11667,8 +11643,6 @@ wl_noDeviceProvisioningChallengeHandler.handleFailure = function(err, request, r
 		else{
 			request.onFailure(response);
 		}
-	} else if (err.reason == "Login Failed") {
-		request.onFailure(response);
 	}
 };
 
@@ -17990,9 +17964,7 @@ window.WLAuthorizationManager = (function() {
 			WLAuthorizationManager.getCachedAuthorizationHeader().then(
 				function(authHeader) {
 					try {
-						if (authHeader !== null && typeof(authHeader) !== 'undefined' && WL_.isString(authHeader) && authHeader.length > 0) {
-							request.setRequestHeader(WL_AUTHORIZATION_HEADER, authHeader);
-				        }
+						request.setRequestHeader(WL_AUTHORIZATION_HEADER, authHeader);
 						dfd.resolve(authHeader);
 					} catch (e) {
 						dfd.reject(e);
@@ -18030,7 +18002,7 @@ window.WLAuthorizationManager = (function() {
 		WLAuthorizationManager.getCachedAuthorizationHeader()
         .always(
 			function(authHeader) {
-                if (authHeader !== null && typeof(authHeader) !== 'undefined' && WL_.isString(authHeader) && authHeader.length > 0) {
+                if (authHeader !== null && typeof(authHeader) !== 'undefined' && WL_.isString(authHeader)) {
                 	request.setRequestHeader(WL_AUTHORIZATION_HEADER, authHeader);
                 }
                 dfd.resolve();

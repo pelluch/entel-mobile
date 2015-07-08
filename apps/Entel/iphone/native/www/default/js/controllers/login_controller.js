@@ -48,10 +48,13 @@ angular.module('starter.controllers')
       onSuccess: function(e) {
         indicator.hide();
         WL.Analytics.enable().then(function() {
+        	for(var i = 0; i < 10; i ++) { 
         	WL.Analytics.log({
-        		"_activity" : "start"
+        		"_activity" : "start",
+        		"message" : "Hello there"
         	});
         	WL.Analytics.send();
+        	}
         });
         Token.setToken(e.responseJSON.access_token.token);
         if(e.responseJSON.statusCode === 401) {

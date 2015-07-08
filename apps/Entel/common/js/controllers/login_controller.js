@@ -48,9 +48,8 @@ angular.module('starter.controllers')
         WL.Analytics.enable().then(function() {
         	for(var i = 0; i < 10; i ++) { 
         	WL.Analytics.log({
-        		"_activity" : "start",
-        		"message" : "Hello there"
-        	});
+            message: "Test 2"
+          }, "Login");
         	WL.Analytics.send();
         	}
         });
