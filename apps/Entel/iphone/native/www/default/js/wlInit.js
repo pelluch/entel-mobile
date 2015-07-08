@@ -44,8 +44,9 @@ function wlCommonInit(){
         }
     };
 
+    
     WL.JSONStore.init(collections, {
-        localKeyGen: false
+    localKeyGen: false
     }).then(function() {
         var env = WL.Client.getEnvironment();
         if(env === WL.Environment.IPHONE || env === WL.Environment.IPAD){
@@ -55,9 +56,85 @@ function wlCommonInit(){
         }   
 
         angular.element(document).ready(function() {
-            
+
             angular.bootstrap(document, ['starter']);
         });         
     });
 
+    
+    
+
+}
+
+function isPushSupported() {
+    var isSupported = false;
+    if (WL.Client.Push){
+        isSupported = WL.Client.Push.isPushSupported();
+    }   
+    alert(isSupported);
+}
+
+function isPushSubscribed() {
+    var isSubscribed = false;
+    if (WL.Client.Push){
+        isSubscribed = WL.Client.Push.isSubscribed('Entel');
+    }
+    alert(isSubscribed);
+}
+
+//---------------------------- Set up push notifications -------------------------------
+if (WL.Client.Push) {   
+    WL.Client.Push.onReadyToSubscribe = function() {
+
+        WL.Client.Push.registerEventSourceCallback(
+            "Entel", 
+            "push", 
+            "PushEventSource", 
+            pushNotificationReceived);
+    };
+    if(WL.Client.Push.isPushSupported()) {
+        WL.Logger.warn("Push supported");
+        doSubscribe();
+    } else {
+        WL.Logger.warn("No push support");   
+    }
+}
+
+// --------------------------------- Subscribe ------------------------------------
+function doSubscribe() {
+    WL.Client.Push.subscribe("Entel", {
+        onSuccess: doSubscribeSuccess,
+        onFailure: doSubscribeFailure
+    });
+}
+
+function doSubscribeSuccess() {
+    alert("doSubscribeSuccess");
+}
+
+function doSubscribeFailure() {
+    alert("doSubscribeFailure");
+}
+
+//------------------------------- Unsubscribe ---------------------------------------
+function doUnsubscribe() {
+    WL.Client.Push.unsubscribe("Entel", {
+        onSuccess: doUnsubscribeSuccess,
+        onFailure: doUnsubscribeFailure
+    });
+}
+
+function doUnsubscribeSuccess() {
+    alert("doUnsubscribeSuccess");
+}
+
+function doUnsubscribeFailure() {
+    alert("doUnsubscribeFailure");
+}
+
+//------------------------------- Handle received notification ---------------------------------------
+function pushNotificationReceived(props, payload) {
+    alert("pushNotificationReceived invoked");
+    alert("props :: " + JSON.stringify(props));
+    alert("payload :: " + JSON.stringify(payload));
 }

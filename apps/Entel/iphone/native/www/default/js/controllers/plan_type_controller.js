@@ -5,6 +5,7 @@
 angular.module('starter.controllers')
 .controller('PlanTypeListCtrl', function($scope, $stateParams, PlanTypeConnector) {
 
+  
   $scope.planTypes = [];
   var indicator = new WL.BusyIndicator();
   indicator.show();

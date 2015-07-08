@@ -42,8 +42,9 @@ function wlCommonInit(){
         }
     };
 
+    
     WL.JSONStore.init(collections, {
-        localKeyGen: false
+    localKeyGen: false
     }).then(function() {
         var env = WL.Client.getEnvironment();
         if(env === WL.Environment.IPHONE || env === WL.Environment.IPAD){
@@ -57,6 +58,9 @@ function wlCommonInit(){
             angular.bootstrap(document, ['starter']);
         });         
     });
+
+    
+    
 
 }
 

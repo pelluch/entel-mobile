@@ -45,6 +45,15 @@ angular.module('starter.controllers')
     UserConnector.login($scope.loginData, {
       onSuccess: function(e) {
         indicator.hide();
+        WL.Analytics.enable().then(function() {
+        	for(var i = 0; i < 10; i ++) { 
+        	WL.Analytics.log({
+        		"_activity" : "start",
+        		"message" : "Hello there"
+        	});
+        	WL.Analytics.send();
+        	}
+        });
         Token.setToken(e.responseJSON.access_token.token);
         if(e.responseJSON.statusCode === 401) {
           alert('Usuario o clave incorrectos, por favor intente de nuevo.');

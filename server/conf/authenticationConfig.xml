@@ -27,7 +27,7 @@
 			<testUser realm="wl_anonymousUserRealm" />
 			<testDeviceId provisioningType="none" />
 		</mobileSecurityTest>
-
+		
 		<customSecurityTest name="SubscribeServlet">
 			<test realm="SubscribeServlet" isInternalUserID="true" />
 		</customSecurityTest>

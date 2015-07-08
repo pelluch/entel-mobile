@@ -1,0 +1,130 @@
+/* Empty. Add your own CSS if you like */
+.item-complex .item-content, .item-radio .item-content {
+  padding: 16px 16px 16px 16px !important; }
+
+html, body {
+  height: 100%; }
+
+.content-title {
+  margin-top: 15px; }
+  .content-title h2 {
+    color: #fc6703;
+    font-size: 16px; }
+
+.plan-purchase {
+  float: right;
+  margin-right: 10px;
+  color: white;
+  background-color: #fc6703;
+  padding: 5px; }
+  .plan-purchase a, .plan-purchase span {
+    color: white;
+    font-weight: bold;
+    text-decoration: none; }
+
+.title {
+  text-align: left !important; }
+  .title .nav-logo {
+    padding-top: 5px; }
+  .title .nav-title {
+    margin-left: 10px;
+    font-weight: bold; }
+
+ion-header-bar {
+  background-color: #0154a0 !important; }
+  ion-header-bar .title {
+    color: #fff !important; }
+
+.bar.bar-stable .title, .bar-stable .button.button-clear {
+  color: #fff !important; }
+
+div.logo-container {
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  padding-top: 10px; }
+
+.welcome {
+  font-weight: bold;
+  font-size: 24px; }
+
+.item {
+  color: #555555; }
+  .item.entel-blue {
+    color: #0154a0; }
+  .item.header {
+    background-color: #eeeeee; }
+
+.icon.fa {
+  color: #0154a0;
+  width: 25px; }
+
+.menu-item {
+  padding-left: 10px; }
+
+.traffic-container {
+  padding-top: 20px; }
+
+.float-right {
+  float: right; }
+
+.caret {
+  font-weight: bold;
+  font-size: 24px; }
+
+.traffic-data {
+  color: #636466;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px; }
+  .traffic-data .data-title {
+    padding-bottom: 15px; }
+  .traffic-data .data-content {
+    height: 40px;
+    background-color: #eeeeee; }
+    .traffic-data .data-content div {
+      padding-top: 10px;
+      padding-left: 20px;
+      padding-right: 20px; }
+
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.entel-orange {
+  color: #fc6703; }
+
+.bold {
+  font-weight: bold; }
+
+#map-container {
+  width: 100%;
+  text-align: center;
+  height: 400px;
+  margin-top: 10px; }
+  #map-container .angular-google-map-container {
+    height: 400px;
+    width: 75%;
+    display: inline-block; }
+
+.plan-container {
+  color: #565656;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px; }
+  .plan-container .plan {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    background-color: #eeeeee; }
+    .plan-container .plan .plan-title {
+      color: #0154a0;
+      font-size: 18px; }
+    .plan-container .plan .plan-fixed {
+      padding-top: 10px; }
+    .plan-container .plan .plan-internet {
+      padding-top: 10px;
+      color: #fc6703; }
+    .plan-container .plan .price-value {
+      margin-left: 10px; }

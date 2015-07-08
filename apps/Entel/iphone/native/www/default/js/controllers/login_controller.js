@@ -13,8 +13,12 @@ angular.module('starter.controllers')
          disableBack: true
        });
         $state.go('app.plan_types', {}, { location: "replace", reload: true }).then(function() {
-          // WL.App.hideSplashScreen();
+            setTimeout(function() {
+              WL.App.hideSplashScreen();
+            }, 2000);
         });
+      } else {
+        WL.App.hideSplashScreen();
       }
     });
 
@@ -43,6 +47,12 @@ angular.module('starter.controllers')
     UserConnector.login($scope.loginData, {
       onSuccess: function(e) {
         indicator.hide();
+        WL.Analytics.enable().then(function() {
+        	WL.Analytics.log({
+        		"_activity" : "start"
+        	});
+        	WL.Analytics.send();
+        });
         Token.setToken(e.responseJSON.access_token.token);
         if(e.responseJSON.statusCode === 401) {
           alert('Usuario o clave incorrectos, por favor intente de nuevo.');

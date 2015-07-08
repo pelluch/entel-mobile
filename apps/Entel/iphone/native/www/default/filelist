@@ -1,3 +1,4 @@
+/css/.gitkeep
 /css/ionic.app.css
 /css/main.css
 /css/style.css
@@ -194,6 +195,7 @@
 /worklight/plugins/org.apache.cordova.splashscreen/www/splashscreen.js
 /worklight/plugins/org.apache.cordova.statusbar/www/statusbar.js
 /worklight/plugins/org.apache.cordova.vibration/www/vibration.js
+/worklight/Tealeaf.min.js
 /worklight/wljq.js
 /worklight/worklight.css
 /worklight/worklight.js
