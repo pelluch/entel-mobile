@@ -46,12 +46,15 @@ function getPlans(planTypeId) {
 	return WL.Server.invokeHttp(input);
 }
 
-function getPlan(userId) {
+function getPlan(token) {
 	
 	var input = {
 	    method : 'get',
 	    returnedContentType : 'json',
-	    path : 'entel/users/' + userId + '/plan'
+	    path : 'entel/plan',
+	    headers: {
+			Authorization: 'Bearer ' + token 
+		}
 	};
 	
 	

@@ -22,7 +22,7 @@
 			<span class="price-label" ng-if="plan.internet_price !== null">Promoción internet</span>
 			<span class="price-value" ng-if="plan.internet_price !== null">{{ plan.internet_price }}
 				<div class="plan-purchase">
-					<a href='#'>[ Solicitar_</a>
+					<a href='#' ng-click="showAlert('{{ plan.name }}')">[ Solicitar_</a>
 				</div>
 			</div>
 			<div ng-if="plan.internet_price !== null">

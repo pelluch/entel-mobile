@@ -2,7 +2,7 @@
 /* JavaScript content from js/connectors/user_connector.js in folder common */
 
 
-angular.module('starter.connectors', [])
+angular.module('starter.connectors', [ 'starter.services' ])
 .service('UserConnector', [ function() {
 
     this.addUser = function(userParams, opts) {

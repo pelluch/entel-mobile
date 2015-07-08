@@ -22,6 +22,29 @@ html, body {
 	}
 }
 
+.menu-inline {
+	float: left;
+	.bracket {
+		font-size: 28px;
+		margin-top: 10px;
+	}
+	.bracket-container {
+		margin-top: 8px;
+	}
+}
+
+.list {
+	clear: both;
+}
+
+.user-info {
+	margin-left: 15px;
+}
+.names {
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
 .plan-purchase {
 	float: right;
 	margin-right: 10px;

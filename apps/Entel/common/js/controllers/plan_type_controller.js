@@ -3,7 +3,7 @@
 angular.module('starter.controllers')
 .controller('PlanTypeListCtrl', function($scope, $stateParams, PlanTypeConnector) {
 
-  
+
   $scope.planTypes = [];
   var indicator = new WL.BusyIndicator();
   indicator.show();
@@ -16,16 +16,19 @@ angular.module('starter.controllers')
     },
     onFailure: function(e) {
       indicator.hide();
-      alert('No se han podido cargar los planes, revise su conectividad');
+      WL.SimpleDialog.show('Error', 'No se han podido cargar los planes, revise su conectividad',
+        [ { text: "Aceptar" }]);
     }
   });
 })
 
 .controller('PlanTypeCtrl', function($scope, $stateParams, $location, Utils, PlanConnector) {
+
   console.log($stateParams);
   $scope.plans = [];
   var indicator = new WL.BusyIndicator();
   indicator.show();
+
   PlanConnector.getPlans($stateParams.planTypeId, {
     onSuccess: function(e) {
       indicator.hide();
@@ -40,7 +43,19 @@ angular.module('starter.controllers')
     },
     onFailure: function(e) {
       indicator.hide();
-      alert('No se han podido cargar los planes, revise su conectividad');
+      WL.SimpleDialog.show('Error', 'No se han podido cargar los planes, revise su conectividad',
+        [ { text: "Aceptar" }]);
     }
   });
-})
+
+  $scope.showAlert = function(msg) {
+    WL.Analytics.log({ 
+      message: "Usuario ha solicitado el plan " + msg,
+      type: "event"
+    });         
+    WL.Analytics.send();
+    WL.SimpleDialog.show('Información', 'Esta funcionalidad no está disponible',
+      [ { text: "Aceptar" }]);
+  };
+
+});

@@ -1,6 +1,6 @@
 
 
-angular.module('starter.connectors', [])
+angular.module('starter.connectors', [ 'starter.services' ])
 .service('UserConnector', [ function() {
 
     this.addUser = function(userParams, opts) {

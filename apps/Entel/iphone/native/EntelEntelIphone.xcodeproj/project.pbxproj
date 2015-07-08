@@ -51,8 +51,6 @@
 		47F3D1F41723E20B004534C9 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F3D1F31723E20B004534C9 /* AssetsLibrary.framework */; };
 		5E144E0A180EEBA700A01719 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E144E09180EEBA700A01719 /* libstdc++.6.dylib */; };
 		71B9C74F170B3D2D008197AE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B9C74E170B3D2D008197AE /* CoreTelephony.framework */; };
-		71D6567417147FFC00219B1E /* libTLFLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D6567217147FFC00219B1E /* libTLFLib.a */; };
-		71D6567517147FFC00219B1E /* TLFResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71D6567317147FFC00219B1E /* TLFResources.bundle */; };
 		846D17A6145DC8F9008C9E10 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 846D17A5145DC8F9008C9E10 /* libz.dylib */; };
 		920D631B1619F5B4007B7418 /* sqlcipher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 920D631A1619F5B4007B7418 /* sqlcipher.framework */; };
 		9C0ED53A17FE946B00C8B73C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0ED53917FE946A00C8B73C /* ImageIO.framework */; };
@@ -89,7 +87,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1559A5DD190855E00073ED44 /* TLFApplicationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLFApplicationHelper.h; sourceTree = "<group>"; };
 		188F367517D5C74F00C50D85 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-29.png"; path = "Resources/Icon-29.png"; sourceTree = "<group>"; };
 		188F367617D5C74F00C50D85 /* Icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-29@2x.png"; path = "Resources/Icon-29@2x.png"; sourceTree = "<group>"; };
 		188F367717D5C74F00C50D85 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40.png"; path = "Resources/Icon-40.png"; sourceTree = "<group>"; };
@@ -112,9 +109,6 @@
 		2710065016A09DEF0072351B /* Localizations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Localizations.bundle; path = Resources/Localizations.bundle; sourceTree = "<group>"; };
 		2710067016A09DEF0072351B /* CDVCapture.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CDVCapture.bundle; path = Resources/CDVCapture.bundle; sourceTree = "<group>"; };
 		2710069016A09DEF0072351B /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CDVNotification.bundle; path = Resources/CDVNotification.bundle; sourceTree = "<group>"; };
-		27BF701C18FC821B00372398 /* TLFApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLFApplication.h; sourceTree = "<group>"; };
-		27BF701D18FC821B00372398 /* TLFCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLFCustomEvent.h; sourceTree = "<group>"; };
-		27BF701E18FC821B00372398 /* TLFPublicDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLFPublicDefinitions.h; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
@@ -219,8 +213,6 @@
 		5E55B47518109341000E42A7 /* AbstractAcquisitionError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractAcquisitionError.h; sourceTree = "<group>"; };
 		5E55B47618109341000E42A7 /* ChallengeHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeHandler.h; sourceTree = "<group>"; };
 		71B9C74E170B3D2D008197AE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		71D6567217147FFC00219B1E /* libTLFLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTLFLib.a; sourceTree = "<group>"; };
-		71D6567317147FFC00219B1E /* TLFResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TLFResources.bundle; sourceTree = "<group>"; };
 		846D17A5145DC8F9008C9E10 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8497546E13F195D7002A55C1 /* buildtime.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = buildtime.sh; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* EntelEntelIphone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EntelEntelIphone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -258,7 +250,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71D6567417147FFC00219B1E /* libTLFLib.a in Frameworks */,
 				5E144E0A180EEBA700A01719 /* libstdc++.6.dylib in Frameworks */,
 				71B9C74F170B3D2D008197AE /* CoreTelephony.framework in Frameworks */,
 				9C0ED53A17FE946B00C8B73C /* ImageIO.framework in Frameworks */,
@@ -415,12 +406,6 @@
 		71D6567117147FFC00219B1E /* Tealeaf */ = {
 			isa = PBXGroup;
 			children = (
-				27BF701E18FC821B00372398 /* TLFPublicDefinitions.h */,
-				27BF701D18FC821B00372398 /* TLFCustomEvent.h */,
-				1559A5DD190855E00073ED44 /* TLFApplicationHelper.h */,
-				27BF701C18FC821B00372398 /* TLFApplication.h */,
-				71D6567317147FFC00219B1E /* TLFResources.bundle */,
-				71D6567217147FFC00219B1E /* libTLFLib.a */,
 			);
 			path = Tealeaf;
 			sourceTree = "<group>";
@@ -616,7 +601,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71D6567517147FFC00219B1E /* TLFResources.bundle in Resources */,
 				188F368717D5C74F00C50D85 /* Icon-57.png in Resources */,
 				188F368817D5C74F00C50D85 /* Icon-57@2x.png in Resources */,
 				301BF570109A69640062928A /* www in Resources */,
@@ -819,8 +803,6 @@
 					"\"$(BUILT_PRODUCTS_DIR)/libCordova.a\"",
 					"-force_load",
 					"\"$(SRCROOT)/WorklightSDK/libWorklightStaticLibProject.a\"",
-					"-force_load",
-					"\"$(SRCROOT)/Tealeaf/libTLFLib.a\"",
 					"-ObjC",
 				);
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5F82BBAB-2375-480D-83D3-BCBFA61C0A33";
@@ -909,8 +891,6 @@
 					"\"$(BUILT_PRODUCTS_DIR)/libCordova.a\"",
 					"-force_load",
 					"\"$(SRCROOT)/WorklightSDK/libWorklightStaticLibProject.a\"",
-					"-force_load",
-					"\"$(SRCROOT)/Tealeaf/libTLFLib.a\"",
 					"-ObjC",
 				);
 				SDKROOT = iphoneos;

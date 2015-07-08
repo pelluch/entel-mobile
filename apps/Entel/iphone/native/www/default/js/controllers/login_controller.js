@@ -27,17 +27,20 @@ angular.module('starter.controllers')
     var loginData = $scope.loginData;
     if(loginData) {
       if(!validatePhoneNumber(loginData.phone_number)) {
-        alert('Debe ingresar un número de 8 dígitos');
+        WL.SimpleDialog.show('Error', 'Debe ingresar un número de 8 dígitos',
+        [ { text: "Aceptar" }]);
         return;
       }
 
       if(!validateRut(loginData.rut)) {
-        alert('Debe ingresar un RUT válido');
+        WL.SimpleDialog.show('Error', 'Debe ingresar un RUT válido',
+        [ { text: "Aceptar" }]);
         return;
       }
 
       if(!validatePassword(loginData.password, 4)) {
-        alert('Debe ingresar un clave de al menos 4 caracteres');
+        WL.SimpleDialog.show('Error', 'Debe ingresar un clave de al menos 4 caracteres',
+        [ { text: "Aceptar" }]);
         return;
       }
     }
@@ -48,13 +51,13 @@ angular.module('starter.controllers')
       onSuccess: function(e) {
         indicator.hide();
         WL.Analytics.enable().then(function() {
-        	for(var i = 0; i < 10; i ++) { 
-        	WL.Analytics.log({
-        		"_activity" : "start",
-        		"message" : "Hello there"
-        	});
-        	WL.Analytics.send();
-        	}
+        for(var i = 0; i < 10; ++i) {
+        	WL.Analytics.log({ 
+            message: "This is a test message",
+            type: "Test field"
+          });        	
+          WL.Analytics.send();
+          }
         });
         Token.setToken(e.responseJSON.access_token.token);
         if(e.responseJSON.statusCode === 401) {

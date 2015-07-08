@@ -1,41 +1,44 @@
 
 angular.module('starter.controllers')
-.controller('LoginCtrl', function($scope, $stateParams, $ionicViewService, $location, $state, UserConnector, Token) {
+.controller('LoginCtrl', function($scope, $stateParams, $ionicViewService, $location, $state, UserConnector, User) {
 
   $scope.loginData = {};
 
- 
-    Token.getToken(function(token) {
-      if(token) {
-        $ionicViewService.nextViewOptions({
-         disableBack: true
-       });
-        $state.go('app.plan_types', {}, { location: "replace", reload: true }).then(function() {
-            setTimeout(function() {
-              WL.App.hideSplashScreen();
-            }, 2000);
-        });
-      } else {
-        WL.App.hideSplashScreen();
-      }
-    });
+  
+  User.getUser(function(user) {
+    if(user) {
+      $ionicViewService.nextViewOptions({
+       disableBack: true
+     });
+      $state.go('app.plan_types', {}, { location: "replace", reload: true }).then(function() {
+        setTimeout(function() {
+          WL.App.hideSplashScreen();
+        }, 2000);
+      });
+    } else {
+      WL.App.hideSplashScreen();
+    }
+  });
 
   $scope.doLogin = function() {
 
     var loginData = $scope.loginData;
     if(loginData) {
       if(!validatePhoneNumber(loginData.phone_number)) {
-        alert('Debe ingresar un número de 8 dígitos');
+        WL.SimpleDialog.show('Error', 'Debe ingresar un número de 8 dígitos',
+          [ { text: "Aceptar" }]);
         return;
       }
 
       if(!validateRut(loginData.rut)) {
-        alert('Debe ingresar un RUT válido');
+        WL.SimpleDialog.show('Error', 'Debe ingresar un RUT válido',
+          [ { text: "Aceptar" }]);
         return;
       }
 
       if(!validatePassword(loginData.password, 4)) {
-        alert('Debe ingresar un clave de al menos 4 caracteres');
+        WL.SimpleDialog.show('Error', 'Debe ingresar un clave de al menos 4 caracteres',
+          [ { text: "Aceptar" }]);
         return;
       }
     }
@@ -45,31 +48,37 @@ angular.module('starter.controllers')
     UserConnector.login($scope.loginData, {
       onSuccess: function(e) {
         indicator.hide();
-        WL.Analytics.enable().then(function() {
-        	for(var i = 0; i < 10; i ++) { 
-        	WL.Analytics.log({
-            message: "Test 2"
-          }, "Login");
-        	WL.Analytics.send();
-        	}
+           WL.Analytics.log({ 
+            message: "Usuario " + loginData.rut + " ha iniciado sesión",
+            type: "event"
+          });        	
+           WL.Analytics.send();
+
+        User.setUser({
+          name: e.responseJSON.name,
+          account_holder: e.responseJSON.account_holder,
+          token: e.responseJSON.access_token.token
         });
-        Token.setToken(e.responseJSON.access_token.token);
         if(e.responseJSON.statusCode === 401) {
           alert('Usuario o clave incorrectos, por favor intente de nuevo.');
         } else if(e.responseJSON.statusCode === 200) {
 
           WL.JSONStore.destroy().then(function() {
             var collections = {};
-            collections["AccessToken"] = {
+            collections["User"] = {
               searchFields: {
-                token: 'string'
+                token: 'string',
+                name: 'string',
+                account_holder: 'string'
               }
             };
 
             WL.JSONStore.init(collections, {
               localKeyGen: false
             }).then(function() {
-              WL.JSONStore.get('AccessToken').add([{
+              WL.JSONStore.get('User').add([{
+                name: e.responseJSON.name,
+                account_holder: e.responseJSON.account_holder,
                 token: e.responseJSON.access_token.token
               }]).then(function() {
                 $ionicViewService.nextViewOptions({

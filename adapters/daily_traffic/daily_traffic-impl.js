@@ -39,18 +39,21 @@ function getDailyTraffics(userId) {
 	var input = {
 			method : 'get',
 			returnedContentType : 'json',
-			path : 'entel/users/' + userId + '/daily_traffics'
+			path : 'entel/daily_traffics'
 	};
 
 
 	return WL.Server.invokeHttp(input);
 }
 
-function getMonthlyTraffic(userId) {
+function getMonthlyTraffic(token) {
 	var input = {
 			method : 'get',
 			returnedContentType : 'json',
-			path : 'entel/users/' + userId + '/daily_traffics/month'
+			path : 'entel/daily_traffics/month',
+			headers: {
+				Authorization: 'Bearer ' + token
+			}
 	};
 
 

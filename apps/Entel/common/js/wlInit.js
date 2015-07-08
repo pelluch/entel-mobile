@@ -36,31 +36,31 @@ function wlCommonInit(){
 
 
     var collections = {};
-    collections["AccessToken"] = {
+    collections["User"] = {
         searchFields: {
-            token: 'string'
+            token: 'string',
+            name: 'string',
+            account_holder: 'string'
         }
     };
+    WL.Analytics.enable().then(function() {
+        WL.JSONStore.init(collections, {
+            localKeyGen: false
+        }).then(function() {
+            var env = WL.Client.getEnvironment();
+            if(env === WL.Environment.IPHONE || env === WL.Environment.IPAD){
+                document.body.classList.add('platform-ios'); 
+            } else if(env === WL.Environment.ANDROID){
+                document.body.classList.add('platform-android'); 
+            }   
 
-    
-    WL.JSONStore.init(collections, {
-    localKeyGen: false
-    }).then(function() {
-        var env = WL.Client.getEnvironment();
-        if(env === WL.Environment.IPHONE || env === WL.Environment.IPAD){
-            document.body.classList.add('platform-ios'); 
-        } else if(env === WL.Environment.ANDROID){
-            document.body.classList.add('platform-android'); 
-        }   
+            angular.element(document).ready(function() {
 
-        angular.element(document).ready(function() {
-
-            angular.bootstrap(document, ['starter']);
-        });         
+                angular.bootstrap(document, ['starter']);
+            });         
+        });
     });
 
-    
-    
 
 }
 

@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Created: 2015-07-08 03:40:14 UTC
+# Created: 2015-07-08 14:31:29 UTC
 # Modifying this file is possible only when the Cache Manifest value in the application descriptor is set to "Managed by user"
 
 NETWORK:
@@ -27,7 +27,7 @@ js/controllers/plan_type_controller.js
 js/controllers/traffic_controller.js
 js/controllers/venue_controller.js
 js/main.js
-js/services/token.js
+js/services/user.js
 js/utils.js
 js/validations.js
 js/wlInit.js
@@ -114,7 +114,6 @@ templates/plan_types.html
 templates/traffic.html
 templates/venues.html
 worklight.manifest.bak
-worklight/Tealeaf.min.js
 worklight/jsonstore.js
 worklight/messages/de/messages.json
 worklight/messages/es/messages.json
